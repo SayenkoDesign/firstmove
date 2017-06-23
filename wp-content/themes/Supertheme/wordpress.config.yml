@@ -14,7 +14,8 @@ parameters:
   wordpress.inline_styles:
     - { id: "inline", source: "%template_dir%/web/stylesheets/inline.css" }
   wordpress.styles:
-    - { id: "app", source: "%template_uri%/web/stylesheets/app.css", deps: ~ }
+    - { id: "fonts", source: "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400i,700,700i", deps: ~ }
+    - { id: "app", source: "%template_uri%/web/stylesheets/app.css", deps: ['fonts'] }
   wordpress.inline_scripts:
     - { id: "inline", source: "%template_dir%/web/scripts-min/inline.min.js" }
   wordpress.scripts:
