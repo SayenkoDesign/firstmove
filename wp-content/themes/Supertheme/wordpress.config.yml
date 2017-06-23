@@ -1,0 +1,21 @@
+parameters:
+  wordpress.acf_path: "%template_dir%/app/config/acf"
+  wordpress.acf_menu: "%wp_debug%"
+  wordpress.theme_support:
+    - "html5"
+    - "post-thumbnails"
+  wordpress.translations: "%template_dir%/languages"
+  wordpress.image_sizes:
+    fullscreen: [1920, 1080, true]
+  wordpress.menus:
+    primary_menu: "Primary Menu"
+  wordpress.sidebars:
+    - { id: "sample_sidebar", name: "sample sidebar", description: "sample sidebar managed by config file" }
+  wordpress.inline_styles:
+    - { id: "inline", source: "%template_dir%/web/stylesheets/inline.css" }
+  wordpress.styles:
+    - { id: "app", source: "%template_uri%/web/stylesheets/app.css", deps: ~ }
+  wordpress.inline_scripts:
+    - { id: "inline", source: "%template_dir%/web/scripts-min/inline.min.js" }
+  wordpress.scripts:
+    - { id: "app", source: "%template_uri%/web/scripts-min/app-debug.js", deps: ['jquery'], header: false }

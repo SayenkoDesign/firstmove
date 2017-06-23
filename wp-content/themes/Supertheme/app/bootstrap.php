@@ -1,0 +1,23 @@
+<?php
+require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/includes/check-requirements.php';
+require_once __DIR__.'/includes/build-container.php';
+require_once __DIR__.'/includes/timber.php';
+require_once __DIR__.'/includes/assets.php';
+require_once __DIR__.'/includes/session.php';
+require_once __DIR__.'/includes/post-types.php';
+require_once __DIR__.'/includes/options-page.php';
+require_once __DIR__.'/includes/replace-jquery.php';
+require_once __DIR__.'/includes/remove-body-margin.php';
+require_once __DIR__.'/includes/login-logo.php';
+require_once __DIR__.'/includes/referral-widget.php';
+require_once __DIR__.'/includes/translations.php';
+require_once __DIR__.'/includes/image-sizes.php';
+require_once __DIR__.'/includes/theme-support.php';
+require_once __DIR__.'/includes/sidebars.php';
+require_once __DIR__.'/includes/menus.php';
+require_once __DIR__.'/includes/acf.php';
+require_once __DIR__.'/includes/yoast.php';
+require_once __DIR__.'/includes/google-analytics.php';
+require_once __DIR__.'/includes/thumbnail-upscale.php';
+require_once __DIR__.'/includes/read-more.php';

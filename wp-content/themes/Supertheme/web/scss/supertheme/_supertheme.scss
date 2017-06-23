@@ -1,0 +1,193 @@
+@import "header";
+@import "buttons";
+
+// sticky-container
+.sticky-container {
+  z-index: 10;
+  .large-menu {
+    background-color: $desktop-menu-background;
+  }
+  .mobile-menu-bar {
+    background-color: $mobile-menu-bar-background;
+  }
+  .mobile-menu {
+    background-color: $mobile-menu-background;
+  }
+}
+.large-logo {
+  max-width: rem-calc(200px);
+}
+.small-logo {
+  max-width: rem-calc(128px);
+}
+
+// wordpress image allignment
+.alignright {
+  float: right;
+  padding: 0 0 $global-padding $global-padding;
+}
+.alignleft {
+  float: left;
+  padding: 0 $global-padding $global-padding 0;
+}
+
+// space for admin bar on front end
+body.admin-bar {
+  padding-top: 46px;
+  @include breakpoint(783px) {
+    padding-top: 32px;
+  }
+}
+
+// jquery datepicker
+.ui-datepicker-header {
+  background-color: $white;
+  text-align: center;
+  padding: 0.5rem;
+}
+.ui-datepicker-prev {
+  float: left;
+  &:before {
+    color: $body-font-color;
+    content: "\f0d9";
+    font-family: "FontAwesome";
+  }
+  span {
+    display: none;
+  }
+}
+.ui-datepicker-next {
+  float: right;
+  &:before {
+    color: $body-font-color;
+    content: "\f0da";
+    font-family: "FontAwesome";
+  }
+  span {
+    display: none;
+  }
+}
+.ui-datepicker-title {
+  font-weight: bold;
+}
+
+// scroll to top
+.scroll-top {
+  position: fixed;
+  z-index: 1;
+  background-color: map-get($foundation-palette, primary);
+  color: $white;
+  display: block;
+  text-align: center;
+  font-size: rem-calc(32px);
+  width: rem-calc(32px);
+  bottom: rem-calc(96px);
+  right: rem-calc(32px);
+  border-radius: $global-radius;
+  @include breakpoint(medium) {
+    font-size: rem-calc(48px);
+    width: rem-calc(48px);
+    bottom: rem-calc(96px);
+    right: rem-calc(48px);
+  };
+  &:hover, &:active, &:focus {
+    color: $white;
+    background-color: scale_color(map-get($foundation-palette, primary), $lightness: -14%);
+  }
+  .fa {
+    position: relative;
+    top: rem-calc(-2px);
+    @include breakpoint(medium) {
+      top: rem-calc(-4px);
+    }
+  }
+}
+
+// search submit
+.search-submit {
+  @include button($white, $primary-color);
+  width: auto;
+  font-family: $header-font-family;
+  text-transform: uppercase;
+  font-weight: $global-weight-bold;
+}
+
+// navigation
+.mobile-menu-bar {
+  .row {
+    align-content: space-between;
+  }
+}
+#small-menu {
+  display: none;
+}
+
+// sidebar
+.sidebar {
+  .widget > ul {
+    margin: 0 0 $global-margin*2 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  label {
+    h1, h2, h3, h4, h5, h6 {
+      color: $body-font-color;
+    }
+  }
+}
+
+// sharethis
+.share {
+  .sharethis > span {
+    display: inline-block;
+    background-color: get-color(primary);
+    width: rem-calc(36px);
+    height: rem-calc(32px);
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      background-color: scale-color(get-color(primary), $lightness: 15%);
+    }
+    &::before {
+      font-family: FontAwesome;
+      color: $white;
+      font-size: rem-calc(19px);
+      position: relative;
+      top: rem-calc(2px);
+    }
+  }
+  .st_sharethis_custom::before {
+    content: "\f1e0"
+  }
+  .st_facebook_custom::before {
+    content: "\f09a ";
+  }
+  .st_twitter_custom::before {
+    content: "\f099";
+  }
+  .st_linkedin_custom::before {
+    content: "\f0e1";
+  }
+  .st_pinterest_custom::before {
+    content: "\f231";
+  }
+  .st_email_custom::before {
+    content: "\f003";
+  }
+}
+
+// archives
+.post-teaser {
+  margin-bottom: $global-margin*3;
+}
+
+// navigation
+.navigation {
+  padding: $global-padding 0;
+}
+
+// layouts
+main.content {
+  padding: $global-padding*2 0;
+}
