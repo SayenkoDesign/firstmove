@@ -84,7 +84,6 @@ acf_add_local_field_group([
         ),
         // board
         ACFFieldGenerator::tab('about_board_tab', 'Board', 'about_board_tab'),
-
         ACFFieldGenerator::repeater('about_board', 'Boards', 'about_board', [
             ACFFieldGenerator::text('about_board_group_title', 'Title', 'about_board_group_title'),
             ACFFieldGenerator::wysiwyg(
@@ -107,6 +106,95 @@ acf_add_local_field_group([
                 'param' => 'page_template',
                 'operator' => '==',
                 'value' => 'page-templates/about.php',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
+// curriculum page
+acf_add_local_field_group([
+    'key' => 'group_curriculum',
+    'title' => 'Curriculum',
+    'fields' => [
+        // callout
+        ACFFieldGenerator::tab('curriculum_callout_tab', 'Call Out', 'curriculum_callout_tab'),
+        ACFFieldGenerator::text('curriculum_callout_title', 'Title', 'curriculum_callout_title'),
+        ACFFieldGenerator::wysiwyg(
+            'curriculum_callout_content',
+            'Content',
+            'curriculum_callout_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // images + content
+        ACFFieldGenerator::tab('curriculum_alt_content_tab', 'Image with Content', 'curriculum_alt_content_tab'),
+        ACFFieldGenerator::repeater('curriculum_alt_content', 'Content', 'curriculum_alt_content', [
+            ACFFieldGenerator::image('curriculum_alt_content_image', 'Image', 'curriculum_alt_content_image', 'id'),
+            ACFFieldGenerator::text('curriculum_alt_content_title', 'Title', 'curriculum_alt_content_title'),
+            ACFFieldGenerator::wysiwyg(
+                'curriculum_alt_content_content',
+                'Content',
+                'curriculum_alt_content_content',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false
+            ),
+            ACFFieldGenerator::text('curriculum_button_text', 'Button Text', 'curriculum_button_text', '', null, false, 50),
+            ACFFieldGenerator::file('curriculum_button_file', 'Button File', 'curriculum_button_file', '', ACFFieldGenerator::FILE_RETURN_URL, null, false, 50),
+        ]),
+        // slider
+        ACFFieldGenerator::tab('curriculum_slider_tab', 'Slider', 'curriculum_slider_tab'),
+        ACFFieldGenerator::text('curriculum_slider_title', 'Title', 'curriculum_slider_title'),
+        ACFFieldGenerator::repeater('curriculum_slider', 'Content', 'curriculum_slider', [
+            ACFFieldGenerator::text('curriculum_slide_title', 'Title', 'curriculum_slide_title', '', null, true, 50),
+            ACFFieldGenerator::text('curriculum_slide_description', 'Description', 'curriculum_slide_description', '', null, true, 50),
+            ACFFieldGenerator::image('curriculum_slide_image', 'Image', 'curriculum_slide_image', 'id'),
+        ]),
+        // accordion
+        ACFFieldGenerator::tab('curriculum_accordions_tab', 'Accordions', 'curriculum_accordions_tab'),
+        ACFFieldGenerator::text('curriculum_accordions_title', 'Title', 'curriculum_accordions_title'),
+        ACFFieldGenerator::text('curriculum_accordion_left_title', 'Title', 'curriculum_accordion_left_title', '', null, true, 50),
+        ACFFieldGenerator::text('curriculum_accordion_right_title', 'Title', 'curriculum_accordion_right_title', '', null, true, 50),
+        ACFFieldGenerator::wysiwyg(
+            'curriculum_accordion_left_content',
+            'Content',
+            'curriculum_accordion_left_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false,
+            '',
+            null,
+            true,
+            50
+        ),
+        ACFFieldGenerator::wysiwyg(
+            'curriculum_accordion_right_content',
+            'Content',
+            'curriculum_accordion_right_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false,
+            '',
+            null,
+            true,
+            50
+        ),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'page-templates/curriculum.php',
             ],
         ],
     ],
