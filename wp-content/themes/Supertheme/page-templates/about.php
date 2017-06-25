@@ -1,4 +1,9 @@
 <?php
+/**
+ * Template Name: About
+ *
+ * @package Supertheme
+ */
 use Timber\Timber;
 
 /** @var $timber Timber */

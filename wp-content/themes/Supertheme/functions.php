@@ -1,12 +1,6 @@
 <?php
 require_once __DIR__.'/app/bootstrap.php';
 
-if(function_exists('acf_add_local_field_group')) {
-    $parser = new \Symfony\Component\Yaml\Parser();
-    $fields = $parser->parse(file_get_contents(__DIR__ . '/app/acf/header.yml'));
-    acf_add_local_field_group($fields);
-}
-
 add_filter('timber/context', function($data){
     // logos
     $data['menu'] = new Timber\Menu('primary_menu');

@@ -12,12 +12,26 @@ add_filter('timber_context', function($data) {
     $data['mobile_logo'] = new Image(get_field('mobile_logo', 'option') ?: get_field('logo', 'option')['ID']);
     $data['alt_logo'] = new Image(get_field('alt_logo', 'option') ?: get_field('logo', 'option')['ID']);
     $data['logo'] = new Image(get_field('logo', 'option')['ID']);
+
     // sharethis
     $data['sharethis'] = get_field('sharethis_key', 'option');
+
     // checkers
     $data['is_ssl'] = is_ssl();
+
     // copyright
     $data['copyright'] = get_field('copyright', 'option');
+
+    // header fields from acf
+    if($title = get_field('header_options_title')) {
+        $data['title'] = $title;
+    }
+    if($title = get_field('header_subtitle')) {
+        $data['header_subtitle'] = $title;
+    }
+    if($video = get_field('header_video', false, false)) {
+        $data['header_video'] = $video;
+    }
 
     return $data;
 });
