@@ -1,22 +1,29 @@
 <header class="header">
-    <div class="box" {% if post.thumbnail %}style="background-image:url('{{ post.thumbnail.src }}');"{% endif %}>
-        {% if header_link is defined and header_link %}
+    <div class="box {% if post.thumbnail %}has-thumbnail{% endif %}" {% if post.thumbnail %}style="background-image:url('{{ post.thumbnail.src }}');"{% endif %}>
+        {% if header_link|default(0) %}
             <a href="{{ post.link }}" class="header-link">
-                <div class="header-title">
-                    <h1>{% if title is defined and title %}{{ title }}{% else %}{{ post.title }}{% endif %}</h1>
-                </div>
-                <div class="header-date">{{ post.date }}</div>
-            </a>
         {% else %}
             <div class="header-no-link">
-                <div class="header-title">
-                    <h1>{% if title is defined and title %}{{ title }}{% else %}{{ post.title }}{% endif %}</h1>
-                </div>
+        {% endif %}
+            <div class="header-title">
+                <h1>{{ title|default(post.title) }}</h1>
+            </div>
+            {% if header_subtitle|default(1) %}
+                <div class="header-subtitle">{{ header_subtitle }}</div>
+            {% endif %}
+            {% if header_video|default(0) %}
+                <a href="{{ header_video }}" class="fancybox header-video"><i class="fa fa-play"></i></a>
+            {% endif %}
+            {% if header_date|default(1) %}
                 <div class="header-date">{{ post.date }}</div>
+            {% endif %}
+        {% if header_link|default(0) %}
+            </a>
+        {% else %}
             </div>
         {% endif %}
     </div>
-    {% if header_author is not defined or header_author %}
+    {% if header_author|default(0) %}
         <div class="author">
             <a href="{{ post.author.link }}" class="author-link">
                 <div class="author-profile">

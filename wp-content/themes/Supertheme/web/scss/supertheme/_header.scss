@@ -18,7 +18,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba($black, 0.25);
+      background-color: rgba(get-color(primary), 0);
       transition: background-color 0.25s ease-out;
       z-index: 0;
     }
@@ -29,9 +29,28 @@
     .header-date {
       color: $light-gray;
     }
+    .header-video {
+      color: $white;
+      font-size: map-deep-get($header-styles, small, h3, font-size);
+      &:hover {
+        color: $anchor-color-hover;
+      }
+      &:focus {
+        outline: none;
+      }
+      @include breakpoint(medium) {
+        font-size: map-deep-get($header-styles, medium, h3, font-size);
+      }
+    }
   }
   .header-link:hover::before {
-    background-color: rgba($black, 0.40);
+    background-color: rgba(scale-color(get-color(primary), $lightness: -15%), 1);
+  }
+  .has-thumbnail .header-link::before, .has-thumbnail .header-no-link::before {
+    background-color: rgba(scale-color(get-color(primary), $lightness: -15%), 0.6);
+  }
+  .has-thumbnail .header-link:hover::before, .has-thumbnail .header-no-link:hover::before {
+    background-color: rgba(scale-color(get-color(primary), $lightness: -15%), 0.8);
   }
   .author {
     text-align: center;

@@ -2,7 +2,9 @@
 
 jQuery(function() {
     jQuery(document).foundation();
-    jQuery('.fancybox').fancybox();
+    jQuery('.fancybox').fancybox({
+        toolbar : true,
+    });
     jQuery('.slick').slick();
 
     // scroll to top

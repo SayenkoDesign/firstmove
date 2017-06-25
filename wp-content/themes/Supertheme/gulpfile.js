@@ -18,7 +18,7 @@ var inline_scripts_src = [
 ];
 var scripts_src = [
     'web/libs/foundation-sites/dist/js/foundation.js',
-    'web/libs/fancybox/source/jquery.fancybox.js',
+    'web/libs/fancybox/dist/jquery.fancybox.js',
     'web/libs/slick-carousel/slick/slick.js',
     'src/web/scripts/app.js',
     'web/scripts/app.js'
@@ -33,6 +33,7 @@ var styles_src = [
 var styles_paths = [
     'web/libs/font-awesome/scss',
     'web/libs/foundation-sites/scss',
+    'web/libs/fancybox/dist/',
     'src/web/scss'
 ];
 var styles_dist = 'web/stylesheets';
