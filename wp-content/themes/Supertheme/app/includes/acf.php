@@ -25,6 +25,71 @@ $parser = new \Symfony\Component\Yaml\Parser();
 $fields = $parser->parse(file_get_contents(__DIR__ . '/../acf/header.yml'));
 acf_add_local_field_group($fields);
 
+// define slider for reuse[
+$acf_slider = [
+    ACFFieldGenerator::tab('slider_tab', 'Slider', 'slider_tab'),
+    ACFFieldGenerator::repeater('slider', 'Slider', 'slider', [
+        ACFFieldGenerator::text('slide_title', 'Title', 'slide_title'),
+        ACFFieldGenerator::wysiwyg(
+            'slide_content',
+            'Content',
+            'slide_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        ACFFieldGenerator::text('slide_source_title', 'Source Title', 'slide_source_title', '', null, true, 50),
+        ACFFieldGenerator::url('slide_source_url', 'Source URL', 'slide_source_url', '', null, true, 50),
+        ACFFieldGenerator::image('slide_source_image', 'Background Image', 'slide_source_image', 'id'),
+    ], 2),
+];
+
+// home page
+acf_add_local_field_group([
+    'key' => 'group_home',
+    'title' => 'Home',
+    'fields' => [
+        ACFFieldGenerator::tab('home_works_tab', 'How it Works', 'home_works_tab'),
+        ACFFieldGenerator::text('home_title', 'Title', 'home_title', '', null, true, 50),
+        ACFFieldGenerator::image('home_image', 'Footer Image', 'home_image', 'id',  '', true, 50),
+        ACFFieldGenerator::repeater('home_works', 'Steps', 'about_members', [
+            ACFFieldGenerator::text('home_step_title', 'Title', 'home_step_title', '', null, true, 50),
+            ACFFieldGenerator::url('home_step_url', 'URL', 'home_step_url', '', null, true, 50),
+            ACFFieldGenerator::wysiwyg(
+                'home_step_content',
+                'Content',
+                'home_step_content',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false,
+                '',
+                '',
+                true,
+                50
+            ),
+            ACFFieldGenerator::image('home_step_image', 'Image', 'home_step_image', 'id', '', true, 50),
+        ]),
+        $acf_slider,
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'page-templates/how-it-works.php',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
 // about page
 acf_add_local_field_group([
     'key' => 'group_about',
@@ -188,6 +253,7 @@ acf_add_local_field_group([
             true,
             50
         ),
+        $acf_slider,
     ],
     'location' => [
         [
