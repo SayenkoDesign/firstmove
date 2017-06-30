@@ -54,6 +54,49 @@ fields:
     readonly:  0,
     disabled:  0
   -
+    key:  "theme_options_tab_social"
+    label:  "Social Media"
+    name:  "google_tab_social"
+    type:  "tab"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "", class:  "", id:  "" }
+    placement: "left"
+    endpoint: 0
+  -
+    key:  "theme_options_facebook"
+    label:  "Facebook URL"
+    name:  "facebook"
+    type:  "url"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
+    key:  "theme_options_twitter"
+    label:  "Twitter URL"
+    name:  "twitter"
+    type:  "url"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
     key:  "theme_options_tab_logo"
     label:  "Logos"
     name:  "google_tab_logo"
@@ -152,6 +195,70 @@ fields:
     placement: "left"
     endpoint: 0
   -
+    key:  "theme_options_phone"
+    label:  "Phone Number"
+    name:  "phone"
+    type:  "text"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
+    key:  "theme_options_address"
+    label:  "Address"
+    name:  "address"
+    type:  "text"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
+    key:  "theme_options_donate"
+    label:  "Donate URL"
+    name:  "donate"
+    type:  "url"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
+    key:  "theme_options_subscribe"
+    label:  "Subscribe Form ID"
+    name:  "subscribe"
+    type:  "number"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
     key:  "theme_options_copyright"
     label:  "Copyright"
     name:  "copyright"
@@ -163,3 +270,30 @@ fields:
     tabs: "all"
     toolbar: "basic"
     media_upload: false
+  -
+    key:  "theme_options_tab_other"
+    label:  "Other"
+    name:  "tab_other"
+    type:  "tab"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "", class:  "", id:  "" }
+    placement: "left"
+    endpoint: 0
+  -
+    key:  "theme_options_signin"
+    label:  "Sign in URL"
+    name:  "signin"
+    type:  "url"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
