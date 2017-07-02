@@ -1,4 +1,23 @@
 {% set header_date = 0 %}
 {% extends 'base.html.twig' %}
 {% block content %}
+    <section class="steps">
+        <div class="row">
+            <div class="small-12 columns text-center">
+                <h2>{{ post.get_field('home_title') }}</h2>
+            </div>
+        </div>
+        {% for step in steps %}
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <img src="{{ TimberImage(step.home_step_image).src }}" alt="{{ TimberImage(step.home_step_image).title }}" />
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <h2>{{ step.home_step_title }}</h2>
+                    <p>{{ step.home_step_content }}</p>
+                    <a href="{{ step.home_step_url }}">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
 {% endblock %}

@@ -52,7 +52,7 @@ acf_add_local_field_group([
         ACFFieldGenerator::tab('home_works_tab', 'How it Works', 'home_works_tab'),
         ACFFieldGenerator::text('home_title', 'Title', 'home_title', '', null, true, 50),
         ACFFieldGenerator::image('home_image', 'Footer Image', 'home_image', 'id',  '', true, 50),
-        ACFFieldGenerator::repeater('home_works', 'Steps', 'about_members', [
+        ACFFieldGenerator::repeater('home_steps', 'Steps', 'home_steps', [
             ACFFieldGenerator::text('home_step_title', 'Title', 'home_step_title', '', null, true, 50),
             ACFFieldGenerator::url('home_step_url', 'URL', 'home_step_url', '', null, true, 50),
             ACFFieldGenerator::wysiwyg(
