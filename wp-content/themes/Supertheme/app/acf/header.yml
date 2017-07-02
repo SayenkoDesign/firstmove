@@ -57,7 +57,7 @@ fields:
     label:  "Image"
     name:  "header_image"
     type:  "image"
-    instructions:  ""
+    instructions:  "Will default to the featured image if left blank"
     required:  0
     conditional_logic:  0
     wrapper:  {width:  "", class:  "", id:  "" }

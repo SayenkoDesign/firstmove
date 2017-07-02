@@ -1,5 +1,15 @@
 <header class="header">
-    <div class="box {% if post.thumbnail %}has-thumbnail{% endif %}" {% if post.thumbnail %}style="background-image:url('{{ post.thumbnail.src }}');"{% endif %}>
+    <div
+            class="box
+                {% if post.thumbnail or header_image %}has-thumbnail{% endif %}
+                {% if header_image %}has-link{% endif %}
+            "
+            {% if header_image %}
+                style="background-image:url('{{ header_image.src }}');"
+            {% elseif post.thumbnail %}
+                style="background-image:url('{{ post.thumbnail.src }}');"
+            {% endif %}
+    >
         {% if header_link|default(0) %}
             <a href="{{ post.link }}" class="header-link">
         {% else %}

@@ -49,7 +49,7 @@
   .has-thumbnail .header-link::before, .has-thumbnail .header-no-link::before {
     background-color: rgba(scale-color(get-color(primary), $lightness: -15%), 0.6);
   }
-  .has-thumbnail .header-link:hover::before, .has-thumbnail .header-no-link:hover::before {
+  .has-thumbnail .header-link:hover::before {
     background-color: rgba(scale-color(get-color(primary), $lightness: -15%), 0.8);
   }
   .author {

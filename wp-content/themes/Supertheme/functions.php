@@ -4,7 +4,7 @@ require_once __DIR__.'/app/bootstrap.php';
 add_filter('timber/context', function($data){
     // logos
     $data['menu'] = new Timber\Menu('primary_menu');
-
+    $data['header_image'] = new Timber\Image(get_field('header_image'));
     return $data;
 });
 

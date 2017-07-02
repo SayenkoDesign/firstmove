@@ -18,4 +18,34 @@
       font-size: map-deep-get($header-styles, medium, h5, font-size);
     }
   }
+  .header-video {
+    .fa {
+      font-size:0;
+      content: "";
+      display: inline-block;
+      width:rem-calc(32px);
+      height:rem-calc(32px);
+      background-image: url("../images-min/play.min.png");
+      background-size:100%;
+    }
+  }
+}
+.page-template-how-it-works .header {
+  .header-title {
+    h1 {
+      font-size: map-deep-get($header-styles, small, h1, font-size);
+      @include breakpoint(medium) {
+        font-size: map-deep-get($header-styles, medium, h1, font-size);
+      }
+    }
+  }
+  .header-subtitle {
+    max-width: rem-calc(830px);
+    color: #D0D5D2;
+    font-family: $header-font-family;
+    font-size: map-deep-get($header-styles, small, h2, font-size);
+    @include breakpoint(medium) {
+      font-size: map-deep-get($header-styles, medium, h2, font-size);
+    }
+  }
 }
