@@ -1,0 +1,62 @@
+.steps {
+  background-color: #EFF3F1;
+  padding: $global-padding*2 0 $global-padding/2 0;
+  .step {
+    position: relative;
+    @include breakpoint(medium) {
+      &::after {
+        position: absolute;
+        content: "";
+        width: rem-calc(3px);
+        background-color: get-color(secondary);
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 2px);
+      }
+    }
+    .card {
+      border-top: rem-calc(3px) solid get-color(secondary);
+      padding: $global-padding*2 $global-padding*2 $global-padding*3 $global-padding*2;
+      background-color: $white;
+      box-shadow: 1px 1px 6px 0 rgba(0,0,0,0.13);
+      @include breakpoint(medium) {
+        margin-left: $global-padding;
+      }
+      h5 {
+        margin-bottom: rem-calc(20px);
+      }
+    }
+    img {
+      @include breakpoint(small only) {
+        margin-bottom: $global-margin;
+      }
+    }
+  }
+  .medium-order-1 .card {
+    @include breakpoint(medium) {
+      margin-right: $global-padding;
+      margin-left: 0;
+    }
+  }
+  .second-last-step {
+    @include breakpoint(medium) {
+      padding-bottom: $global-padding*5;
+    }
+  }
+  .last-step {
+    @include breakpoint(medium) {
+      img {
+        margin-top: rem-calc(-240px);
+      }
+    }
+  }
+  .steps-footer {
+    @include breakpoint(medium) {
+      position: relative;
+      img {
+        margin-top: rem-calc(-160px);
+        margin-left: rem-calc(8px);
+      }
+    }
+  }
+}

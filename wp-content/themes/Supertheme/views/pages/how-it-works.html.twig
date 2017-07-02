@@ -8,16 +8,27 @@
             </div>
         </div>
         {% for step in steps %}
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <img src="{{ TimberImage(step.home_step_image).src }}" alt="{{ TimberImage(step.home_step_image).title }}" />
+            <div class="row align-middle step {% if loop.last %}last-step{% endif %} {% if loop.index == steps|length - 1 %}second-last-step{% endif %}">
+                <div class="small-12 medium-6 columns {% if loop.index % 2 == 0 %}medium-order-2{% endif %}">
+                    <img
+                            src="{{ TimberImage(step.home_step_image).src }}"
+                            alt="{{ TimberImage(step.home_step_image).title }}"
+                    />
                 </div>
-                <div class="small-12 medium-6 columns">
-                    <h2>{{ step.home_step_title }}</h2>
-                    <p>{{ step.home_step_content }}</p>
-                    <a href="{{ step.home_step_url }}">Read More</a>
+                <div class="small-12 medium-6 columns {% if loop.index % 2 == 0%}medium-order-1{% endif %}">
+                    <div class="card">
+                        <h5>{{ step.home_step_title }}</h5>
+                        {{ step.home_step_content }}
+                        <a href="{{ step.home_step_url }}">Read More</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
+        <div class="steps-footer text-center">
+            <img
+                    src="{{ TimberImage(post.get_field('home_image')).src }}"
+                    alt="{{ TimberImage(post.get_field('home_image')).title }}"
+            />
+        </div>
     </section>
 {% endblock %}

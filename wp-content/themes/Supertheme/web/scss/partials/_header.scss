@@ -3,6 +3,7 @@
     position: relative;
   }
   .header-title h1 {
+    color: $white;
     text-shadow: 1px 1px 15px rgba($black,0.5);
     font-size: map-deep-get($header-styles, small, h3, font-size);
     @include breakpoint(medium) {
