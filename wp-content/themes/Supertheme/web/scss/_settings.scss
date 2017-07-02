@@ -44,6 +44,20 @@
 
 @import 'util/util';
 
+$slick-font-path: "../web/libs/slick-carousel/slick/fonts/";
+$slick-font-family: "slick";
+$slick-loader-path: "../web/libs/slick-carousel/slick/";
+$slick-arrow-color: white;
+$slick-dot-color: white;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: "\2190";
+$slick-next-character: "\2192";
+$slick-dot-character: "\2022";
+$slick-dot-size: rem-calc(20px);
+$slick-opacity-default: 0.75;
+$slick-opacity-on-hover: 1;
+$slick-opacity-not-active: 0.25;
+
 // 1. Global
 // ---------
 
@@ -52,6 +66,7 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #5F84C6,
+  primary_light: #92ADDE,
   secondary: #E08C0F,
   success: #3adb76,
   warning: #E08C0F,

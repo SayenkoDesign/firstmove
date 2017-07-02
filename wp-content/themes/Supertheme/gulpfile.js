@@ -32,6 +32,7 @@ var styles_src = [
 ];
 var styles_paths = [
     'web/libs/font-awesome/scss',
+    'web/libs/slick-carousel/slick',
     'web/libs/foundation-sites/scss',
     'web/libs/fancybox/dist/',
     'src/web/scss'

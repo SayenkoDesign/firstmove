@@ -40,7 +40,7 @@ $acf_slider = [
         ),
         ACFFieldGenerator::text('slide_source_title', 'Source Title', 'slide_source_title', '', null, true, 50),
         ACFFieldGenerator::url('slide_source_url', 'Source URL', 'slide_source_url', '', null, true, 50),
-        ACFFieldGenerator::image('slide_source_image', 'Background Image', 'slide_source_image', 'id'),
+        ACFFieldGenerator::image('slide_image', 'Background Image', 'slide_image', 'id'),
     ], 2),
 ];
 

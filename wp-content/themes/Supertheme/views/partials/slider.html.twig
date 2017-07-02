@@ -1,0 +1,15 @@
+<section class="slider">
+    <div class="slick">
+        {% for slide in slider %}
+            <div style="background-image:url('{{ TimberImage(slide.slide_image).src }}')">
+                <div class="row">
+                    <div class="small-12 column text-center">
+                        <h4>{{ slide.slide_title }}</h4>
+                        <blockquote>{{ slide.slide_content }}</blockquote>
+                        <a href="{{ slide.slide_source_url }}">Source: {{ slide.slide_source_title }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

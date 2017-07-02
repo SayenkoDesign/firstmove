@@ -3,6 +3,8 @@
 @import "foundation";
 @include foundation-everything(true);
 @import "jquery.fancybox";
+@import "slick.scss";
+@import "slick-theme.scss";
 @import "supertheme/supertheme";
 @import "partials/header";
 @import "partials/steps";
@@ -25,4 +27,121 @@ body.admin-bar .fancybox-inner {
   height : 450px;
   max-width  : 80%;
   max-height : 80%;
+}
+
+// slick
+.slick-slide {
+  height:auto;
+  position: relative;
+  background-size:cover;
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: rgba(get-color(primary), 0.7);
+  }
+  .row {
+    max-width:rem-calc(650px);
+    padding: $global-padding*5 $global-padding $global-margin*10 $global-padding;
+    position: relative;
+    z-index: 2;
+    font-size: map-deep-get($header-styles, small, h5, font-size);
+    @include breakpoint(small only) {
+      padding: $global-padding*5 $global-padding*4 $global-margin*8 $global-padding*4;
+    }
+    @include breakpoint(medium) {
+      font-size: map-deep-get($header-styles, medium, h5, font-size);
+    }
+    h4 {
+      color: $white;
+      margin-bottom: $global-padding*2;
+    }
+    blockquote {
+      color: $white;
+      margin-bottom: $global-padding*2;
+      padding: 0;
+      border: none;
+      position: relative;
+      &::before {
+        content: '"';
+        font-family:$header-font-family;
+        color: get-color(primary_light);
+        font-size:rem-calc(140px);
+        position: absolute;
+        top: -75px;
+        left: -20px;
+        z-index: 1;
+      }
+      p {
+        line-height: rem-calc(30px);
+        color: $white;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+.slick-prev, .slick-next {
+  width: rem-calc(65px);
+  height: rem-calc(65px);
+  opacity: 0.8;
+  z-index: 1;
+  &:before {
+    content: "";
+  }
+  &:hover {
+    content: "";
+    opacity: 1;
+  }
+}
+.slick-prev {
+  background-image: url("../images-min/prev.min.png");
+  left: rem-calc(25px);
+  @include breakpoint(small only) {
+    transform:translateY(-50%) scale(0.5);
+    left: 0;
+  }
+  @include breakpoint(xlarge) {
+    left: calc(50% - 600px + 30px - 15px);
+  }
+  &:hover {
+    background-image: url("../images-min/prev.min.png");
+  }
+}
+.slick-next {
+  background-image: url("../images-min/next.min.png");
+  right: rem-calc(25px);
+  @include breakpoint(small only) {
+    transform:translateY(-50%) scale(0.5);
+    right: 0;
+  }
+  @include breakpoint(xlarge) {
+    right: calc(50% - 600px + 30px - 15px);
+  }
+  &:hover {
+    background-image: url("../images-min/next.min.png");
+  }
+}
+.slick-dots {
+  bottom: rem-calc(80px);
+  @include breakpoint(small only) {
+    bottom: rem-calc(50px);
+  }
+  li button {
+    background-color: rgba($white, 0.5);
+    border-radius: 100%;
+    &::before {
+      content: "";
+    }
+    &:hover {
+      background-color: rgba($white, 1);
+    }
+  }
+  .slick-active button {
+    background-color: rgba($white, 1);
+  }
 }

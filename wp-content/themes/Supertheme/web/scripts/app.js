@@ -5,7 +5,9 @@ jQuery(function() {
     jQuery('.fancybox').fancybox({
         toolbar : true,
     });
-    jQuery('.slick').slick();
+    jQuery('.slick').slick({
+        dots: true
+    });
 
     // scroll to top
     jQuery('.scroll-top').on("click", function(e){
