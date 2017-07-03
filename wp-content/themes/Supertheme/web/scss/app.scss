@@ -9,6 +9,15 @@
 @import "partials/header";
 @import "partials/footer";
 @import "partials/steps";
+@import "partials/callout";
+@import "partials/downloads";
+@import "partials/fan-art";
+@import "partials/faq";
+
+// accordion
+.accordion-title::before {
+  color: get-color(secondary);
+}
 
 // fancybox
 body.admin-bar .fancybox-inner {

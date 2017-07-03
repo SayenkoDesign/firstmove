@@ -1,0 +1,18 @@
+.downloads {
+  background-color: #EFF3F1;
+  padding: $global-padding*5 0;
+  img {
+    margin-bottom: $global-padding;
+  }
+  .align-middle {
+    margin-bottom: $global-margin*2;
+  }
+  .button {
+    color: $white;
+    border-radius: rem-calc(21px);
+    font-weight: $global-weight-bold;
+    text-transform: uppercase;
+    padding: rem-calc(12px) rem-calc(25px);
+    margin-top: rem-calc(12px);
+  }
+}

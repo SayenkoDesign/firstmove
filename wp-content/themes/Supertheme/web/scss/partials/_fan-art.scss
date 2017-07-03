@@ -1,0 +1,21 @@
+.fan-art {
+  padding: $global-padding*5 0;
+  h4 {
+    margin-bottom: $global-margin*2;
+  }
+  .slick-slide::after {
+    display: none;
+  }
+  .slick-prev {
+    background-color: #000;
+    @include breakpoint(xlarge) {
+      left: rem-calc(-64px);
+    }
+  }
+  .slick-next{
+    background-color: #000;
+    @include breakpoint(xlarge) {
+      right: rem-calc(-64px);
+    }
+  }
+}

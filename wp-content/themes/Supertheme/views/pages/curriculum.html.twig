@@ -1,0 +1,76 @@
+{% set header_date = 0 %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="downloads">
+        <section class="callout text-center">
+            <h4>{{ post.curriculum_callout_title }}</h4>
+            <p>{{ post.curriculum_callout_content }}</p>
+        </section>
+        {% for download in downloads %}
+            <div class="row align-middle">
+                <div class="small-12 medium-5 columns {% if loop.index % 2 == 0 %}medium-order-2{% endif %}">
+                    <img src="{{ TimberImage(download.curriculum_alt_content_image).src }}" alt="{{ TimberImage(download.curriculum_alt_content_image).title }}">
+                </div>
+                <div class="small-12 medium-7 columns {% if loop.index % 2 == 0 %}medium-order-1{% endif %}">
+                    <h4>{{ download.curriculum_alt_content_title }}</h4>
+                    {{ download.curriculum_alt_content_content }}
+                    {% if download.curriculum_button_text and download.curriculum_button_file %}
+                        <a href="{{ download.curriculum_button_file }}" class="secondary button" target="_blank">{{ download.curriculum_button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    <section class="fan-art">
+        <div class="row">
+            <div class="column text-center">
+                <h4>{{ post.curriculum_slider_title }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="slick" data-slick='{"slidesToShow": 5, "slidesToScroll": 1, "dots": false, "infinite": true, "autoplay": true, "autoplaySpeed": 5000, "speed": 2000, "responsive": {"breakpoint": 600, "settings": { "slidesToShow": 2}}}'>
+                    {% for slide in fan_art %}
+                        <div>
+                            <img src="{{ TimberImage(slide.curriculum_slide_image).src }}" alt="{{ TimberImage(slide.curriculum_slide_image).title }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <div class="row">
+            <div class="small-12 column text-center">
+                <h4>{{ post.curriculum_accordions_title }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <ul class="accordion" data-accordion data-allow-all-closed="true">
+                    {% for item in accordion %}
+                        <li class="accordion-item" data-accordion-item>
+                            <a href="#" class="accordion-title">{{ item.curriculum_accordion_left_title }}</a>
+                            <div class="accordion-content" data-tab-content>
+                                {{ item.curriculum_accordion_left_content }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <ul class="accordion" data-accordion data-allow-all-closed="true">
+                    {% for item in accordion %}
+                        <li class="accordion-item" data-accordion-item>
+                            <a href="#" class="accordion-title">{{ item.curriculum_accordion_right_title }}</a>
+                            <div class="accordion-content" data-tab-content>
+                                {{ item.curriculum_accordion_right_content }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% include 'partials/slider.html.twig' %}
+{% endblock %}

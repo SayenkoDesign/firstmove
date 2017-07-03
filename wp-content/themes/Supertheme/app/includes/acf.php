@@ -201,7 +201,7 @@ acf_add_local_field_group([
             false
         ),
         // images + content
-        ACFFieldGenerator::tab('curriculum_alt_content_tab', 'Image with Content', 'curriculum_alt_content_tab'),
+        ACFFieldGenerator::tab('curriculum_alt_content_tab', 'Download', 'curriculum_alt_content_tab'),
         ACFFieldGenerator::repeater('curriculum_alt_content', 'Content', 'curriculum_alt_content', [
             ACFFieldGenerator::image('curriculum_alt_content_image', 'Image', 'curriculum_alt_content_image', 'id'),
             ACFFieldGenerator::text('curriculum_alt_content_title', 'Title', 'curriculum_alt_content_title'),
@@ -217,42 +217,44 @@ acf_add_local_field_group([
             ACFFieldGenerator::file('curriculum_button_file', 'Button File', 'curriculum_button_file', '', ACFFieldGenerator::FILE_RETURN_URL, null, false, 50),
         ]),
         // slider
-        ACFFieldGenerator::tab('curriculum_slider_tab', 'Slider', 'curriculum_slider_tab'),
+        ACFFieldGenerator::tab('curriculum_slider_tab', 'Fan Art', 'curriculum_slider_tab'),
         ACFFieldGenerator::text('curriculum_slider_title', 'Title', 'curriculum_slider_title'),
         ACFFieldGenerator::repeater('curriculum_slider', 'Content', 'curriculum_slider', [
             ACFFieldGenerator::text('curriculum_slide_title', 'Title', 'curriculum_slide_title', '', null, true, 50),
             ACFFieldGenerator::text('curriculum_slide_description', 'Description', 'curriculum_slide_description', '', null, true, 50),
             ACFFieldGenerator::image('curriculum_slide_image', 'Image', 'curriculum_slide_image', 'id'),
-        ]),
+        ], 6),
         // accordion
         ACFFieldGenerator::tab('curriculum_accordions_tab', 'Accordions', 'curriculum_accordions_tab'),
         ACFFieldGenerator::text('curriculum_accordions_title', 'Title', 'curriculum_accordions_title'),
-        ACFFieldGenerator::text('curriculum_accordion_left_title', 'Title', 'curriculum_accordion_left_title', '', null, true, 50),
-        ACFFieldGenerator::text('curriculum_accordion_right_title', 'Title', 'curriculum_accordion_right_title', '', null, true, 50),
-        ACFFieldGenerator::wysiwyg(
-            'curriculum_accordion_left_content',
-            'Content',
-            'curriculum_accordion_left_content',
-            ACFFieldGenerator::WYSIWYG_TAB_ALL,
-            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
-            false,
-            '',
-            null,
-            true,
-            50
-        ),
-        ACFFieldGenerator::wysiwyg(
-            'curriculum_accordion_right_content',
-            'Content',
-            'curriculum_accordion_right_content',
-            ACFFieldGenerator::WYSIWYG_TAB_ALL,
-            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
-            false,
-            '',
-            null,
-            true,
-            50
-        ),
+        ACFFieldGenerator::repeater('curriculum_accordions', 'Content', 'curriculum_accordions', [
+            ACFFieldGenerator::text('curriculum_accordion_left_title', 'Title', 'curriculum_accordion_left_title', '', null, true, 50),
+            ACFFieldGenerator::text('curriculum_accordion_right_title', 'Title', 'curriculum_accordion_right_title', '', null, true, 50),
+            ACFFieldGenerator::wysiwyg(
+                'curriculum_accordion_left_content',
+                'Content',
+                'curriculum_accordion_left_content',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false,
+                '',
+                null,
+                true,
+                50
+            ),
+            ACFFieldGenerator::wysiwyg(
+                'curriculum_accordion_right_content',
+                'Content',
+                'curriculum_accordion_right_content',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false,
+                '',
+                null,
+                true,
+                50
+            ),
+        ], 2),
         $acf_slider,
     ],
     'location' => [
