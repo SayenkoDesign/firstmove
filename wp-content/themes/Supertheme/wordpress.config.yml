@@ -9,6 +9,7 @@ parameters:
     fullscreen: [1920, 1080, true]
   wordpress.menus:
     primary_menu: "Primary Menu"
+    footer_menu: "Footer Menu"
   wordpress.sidebars:
     - { id: "sample_sidebar", name: "sample sidebar", description: "sample sidebar managed by config file" }
   wordpress.inline_styles:

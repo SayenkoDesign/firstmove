@@ -7,6 +7,7 @@
 @import "slick-theme.scss";
 @import "supertheme/supertheme";
 @import "partials/header";
+@import "partials/footer";
 @import "partials/steps";
 
 // fancybox
@@ -30,6 +31,13 @@ body.admin-bar .fancybox-inner {
 }
 
 // slick
+.slider {
+  height: auto;
+  margin: 0;
+}
+.slick-dotted.slick-slider {
+  margin: 0;
+}
 .slick-slide {
   height:auto;
   position: relative;

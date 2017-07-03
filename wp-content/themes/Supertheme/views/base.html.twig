@@ -107,16 +107,7 @@
 {% endblock %}
 
 {% block footer %}
-    <footer class="footer">
-        <div class="row">
-            <div class="column copyright {% if not copyright %}text-center{% endif %}">
-                {% if copyright %}
-                    {{ copyright }}
-                {% else %}
-                    Copyright {{"now"|date('Y')}}
-                {% endif %}
-            </div>
-    </footer>
+    {% include 'partials/footer.html.twig' %}
 {% endblock %}
 
 {% block scripts %}
