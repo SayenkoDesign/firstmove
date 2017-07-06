@@ -214,7 +214,16 @@ acf_add_local_field_group([
                 false
             ),
             ACFFieldGenerator::text('curriculum_button_text', 'Button Text', 'curriculum_button_text', '', null, false, 50),
-            ACFFieldGenerator::file('curriculum_button_file', 'Button File', 'curriculum_button_file', '', ACFFieldGenerator::FILE_RETURN_URL, null, false, 50),
+            ACFFieldGenerator::file(
+                'curriculum_button_file',
+                'Button File',
+                'curriculum_button_file',
+                '',
+                ACFFieldGenerator::FILE_RETURN_URL,
+                null,
+                false,
+                50
+            ),
         ]),
         // slider
         ACFFieldGenerator::tab('curriculum_slider_tab', 'Fan Art', 'curriculum_slider_tab'),
@@ -263,6 +272,219 @@ acf_add_local_field_group([
                 'param' => 'page_template',
                 'operator' => '==',
                 'value' => 'page-templates/curriculum.php',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
+// Donors
+acf_add_local_field_group([
+    'key' => 'success_stories',
+    'title' => 'Success Stories',
+    'fields' => [
+        // callout
+        ACFFieldGenerator::tab('donors_callout_1_tab', 'Call Out', 'donors_callout_1_tab'),
+        ACFFieldGenerator::text('donors_callout_1_title', 'Title', 'donors_callout_1_title'),
+        ACFFieldGenerator::wysiwyg(
+            'donors_callout_1_content',
+            'Content',
+            'donors_callout_1_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // images + content
+        ACFFieldGenerator::tab('donors_alt_content_tab', 'Download', 'donors_alt_content_tab'),
+        ACFFieldGenerator::repeater('donors_alt_content', 'Content', 'donors_alt_content', [
+            ACFFieldGenerator::image('donors_alt_content_image', 'Image', 'donors_alt_content_image', 'id', '', true, 50),
+            ACFFieldGenerator::text('donors_alt_content_title', 'Title', 'donors_alt_content_title', '', null, true, 50),
+            ACFFieldGenerator::wysiwyg(
+                'donors_alt_content_content',
+                'Content',
+                'donors_alt_content_content',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false
+            ),
+            ACFFieldGenerator::text('donors_button_text', 'Button Text', 'donors_button_text', '', null, false, 50),
+            ACFFieldGenerator::file(
+                'donors_button_file',
+                'Button File',
+                'donors_button_file',
+                '',
+                ACFFieldGenerator::FILE_RETURN_URL,
+                null,
+                false,
+                50
+            ),
+        ]),
+        // section header
+        ACFFieldGenerator::tab('donors_section_tab', 'Section Header', 'donors_section_tab'),
+        ACFFieldGenerator::image('donors_section_background_image', 'Background Image', 'donors_section_image', 'id'),
+        ACFFieldGenerator::image('donors_section_image', 'Image', 'donors_section_image', 'id'),
+        // callout
+        ACFFieldGenerator::tab('donors_callout_2_tab', 'Call Out', 'donors_callout_2_tab'),
+        ACFFieldGenerator::text('donors_callout_2_title', 'Title', 'donors_callout_2_title'),
+        ACFFieldGenerator::wysiwyg(
+            'donors_callout_2_content',
+            'Content',
+            'donors_callout_2_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // platinum
+        ACFFieldGenerator::tab('donors_platinum_tab', 'Platinum', 'donors_platinum_tab'),
+        ACFFieldGenerator::text('donors_platinum_button_text', 'Button Text', 'donors_platinum_button_text', '', null, false, 50),
+        ACFFieldGenerator::file(
+            'donors_platinum_button_file',
+            'Button File',
+            'donors_platinum_button_file',
+            '',
+            ACFFieldGenerator::FILE_RETURN_URL,
+            null,
+            false,
+            50
+        ),
+        ACFFieldGenerator::text('donors_platinum_subtext', 'Subtext', 'donors_platinum_subtext', '', null, true, 50),
+        ACFFieldGenerator::image('donors_platinum_icon', 'Icon', 'donors_platinum_icon', 'id', '', true, 50),
+        ACFFieldGenerator::repeater('donors_platinum_donors', 'Donors', 'donors_platinum_donors', [
+            ACFFieldGenerator::image('donors_platinum_donor', 'Donor Logo', 'donors_platinum_donor', 'id'),
+        ]),
+        // gold
+        ACFFieldGenerator::tab('donors_gold_tab', 'Gold', 'donors_gold_tab'),
+        ACFFieldGenerator::text('donors_gold_subtext', 'Subtext', 'donors_gold_subtext', '', null, true, 50),
+        ACFFieldGenerator::image('donors_gold_icon', 'Icon', 'donors_gold_icon', 'id', '', true, 50),
+        ACFFieldGenerator::repeater('donors_gold_donors', 'Donors', 'donors_gold_donors', [
+            ACFFieldGenerator::image('donors_gold_donor', 'Donor Logo', 'donors_gold_donor', 'id'),
+        ]),
+        // silver
+        ACFFieldGenerator::tab('donors_silver_tab', 'Silver', 'donors_silver_tab'),
+        ACFFieldGenerator::text('donors_silver_subtext', 'Subtext', 'donors_silver_subtext', '', null, true, 50),
+        ACFFieldGenerator::image('donors_silver_icon', 'Icon', 'donors_silver_icon', 'id', '', true, 50),
+        ACFFieldGenerator::repeater('donors_silver_donors', 'Donors', 'donors_silver_donors', [
+            ACFFieldGenerator::text('donors_silver_donor', 'Donor', 'donors_silver_donor'),
+        ]),
+        //copper
+        ACFFieldGenerator::tab('donors_copper_tab', 'Copper', 'donors_copper_tab'),
+        ACFFieldGenerator::text('donors_copper_subtext', 'Subtext', 'donors_copper_subtext', '', null, true, 50),
+        ACFFieldGenerator::image('donors_copper_icon', 'Icon', 'donors_copper_icon', 'id', '', true, 50),
+        ACFFieldGenerator::repeater('donors_copper_donors', 'Donors', 'donors_copper_donors', [
+            ACFFieldGenerator::text('donors_copper_donor', 'Subtext', 'donors_copper_donor'),
+        ]),
+        // callout
+        ACFFieldGenerator::tab('donors_callout_3_tab', 'Call Out', 'donors_callout_3_tab'),
+        ACFFieldGenerator::text('donors_callout_3_title', 'Title', 'donors_callout_3_title'),
+        ACFFieldGenerator::wysiwyg(
+            'donors_callout_3_content',
+            'Content',
+            'donors_callout_3_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // supporters
+        ACFFieldGenerator::tab('donors_supporters_tab', 'Supporters', 'donors_supporters_tab'),
+        ACFFieldGenerator::text('donors_supporters_button_text', 'Button Text', 'donors_supporters_button_text', '', null, false, 50),
+        ACFFieldGenerator::url('donors_supporters_button_url', 'Button URL', 'donors_supporters_button_url', '', null, false, 50),
+        ACFFieldGenerator::text('donors_supporters_title', 'Title', 'donors_supporters_title'),
+        ACFFieldGenerator::repeater('donors_supporters_donors', 'Supporters', 'donors_supporters_donors', [
+            ACFFieldGenerator::image('donors_supporters_donor', 'Supporter', 'donors_supporters_donor', 'id'),
+        ]),
+        // callout
+        ACFFieldGenerator::tab('donors_callout_4_tab', 'Call Out', 'donors_callout_4_tab'),
+        ACFFieldGenerator::text('donors_callout_4_title', 'Title', 'donors_callout_4_title'),
+        ACFFieldGenerator::wysiwyg(
+            'donors_callout_4_content',
+            'Content',
+            'donors_callout_4_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // donate
+        ACFFieldGenerator::tab('donors_donate_tab', 'Donate', 'donors_donate_tab'),
+        ACFFieldGenerator::text('donors_donate_button_text', 'Button Text', 'donors_donate_button_text', '', null, false, 50),
+        ACFFieldGenerator::url('donors_donate_button_url', 'Button URL', 'donors_donate_button_url', '', null, false, 50),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'page-templates/donors.php',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
+// case studies
+acf_add_local_field_group([
+    'key' => 'success_stories',
+    'title' => 'Success Stories',
+    'fields' => [
+        // callout
+        ACFFieldGenerator::tab('success_callout_tab', 'Call Out', 'success_callout_tab'),
+        ACFFieldGenerator::text('success_callout_title', 'Title', 'success_callout_title'),
+        ACFFieldGenerator::wysiwyg(
+            'success_callout_content',
+            'Content',
+            'success_callout_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false
+        ),
+        // content
+        ACFFieldGenerator::tab('success_content', 'Content', 'succes_content'),
+        ACFFieldGenerator::text('success_left_title', 'Left Title', 'success_left_title', '', null, true, 50),
+        ACFFieldGenerator::text('success_right_title', 'Right Title', 'success_right_title', '', null, true, 50),
+        ACFFieldGenerator::wysiwyg(
+            'Success_left_content',
+            'Left Content',
+            'success_left_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false,
+            '',
+            null,
+            true,
+            50
+        ),
+        ACFFieldGenerator::wysiwyg(
+            'Success_right_content',
+            'Right Content',
+            'success_right_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false,
+            '',
+            null,
+            true,
+            50
+        ),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'success_stories',
             ],
         ],
     ],

@@ -5,6 +5,8 @@ location:
     - { param: "post_type", operator: "==", value: "page" }
   -
     - { param: "post_type", operator: "==", value: "post" }
+  -
+    - { param: "post_type", operator: "==", value: "success_stories" }
 menu_order: 1
 position: "side"
 style: "default"

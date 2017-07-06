@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% set header_date = 0 %}
+{% block body %}
+    <section class="basic-content">
+        <section class="callout text-center">
+            <h4>{{ post.success_callout_title }}</h4>
+            <p>{{ post.success_callout_content }}</p>
+        </section>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <h4>{{ post.success_left_title }}</h4>
+                {{ post.success_left_content }}
+            </div>
+            <div class="small-12 medium-6 columns">
+                <h4>{{ post.success_right_title }}</h4>
+                {{ post.success_left_content }}
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="row">
+                <div class="column text-left">
+                    {% if post.prev.link %}
+                        <a href="{{ post.prev.link }}"><i class="fa fa-angle-left"></i> Previous</a>
+                    {% endif %}
+                </div>
+                <div class="column text-right">
+                    {% if post.next.link %}
+                        <a href="{{ post.next.link }}">Next <i class="fa fa-angle-right"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+    </section>
+{% endblock %}

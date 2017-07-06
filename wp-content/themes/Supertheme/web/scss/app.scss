@@ -13,6 +13,28 @@
 @import "partials/downloads";
 @import "partials/fan-art";
 @import "partials/faq";
+@import "partials/basic-content";
+@import "partials/donors";
+
+// button
+.secondary.button {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: $global-weight-bold;
+  margin-bottom: $global-margin*2;
+  border-radius: rem-calc(21px);
+  padding: rem-calc(10px) rem-calc(25px);
+  &:hover {
+    color: $white;
+  }
+}
+
+// scroll to top
+.scroll-top {
+  @include breakpoint(medium) {
+    display: none !important;
+  }
+}
 
 // accordion
 .accordion-title::before {

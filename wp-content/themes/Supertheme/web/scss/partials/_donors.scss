@@ -1,0 +1,61 @@
+.platinum, .gold, .silver, .copper {
+  color: $white;
+  .donor-icon {
+    margin-bottom: $global-margin*2;
+  }
+  .donor-logo {
+    margin-bottom: $global-margin*4;
+  }
+  h5 {
+    margin: 0;
+  }
+  h6 {
+    color: $white;
+  }
+}
+.platinum {
+  padding: $global-padding*6 0 $global-padding*4 0;
+  background-color: #D0D5D2;
+  h5 {
+    color: #969591;
+  }
+}
+.gold {
+  padding: $global-padding*6 0 $global-padding*4 0;
+  background-color: #CC8F35;
+  h5 {
+    color: #F6CD66;
+  }
+}
+.silver {
+  padding: $global-padding*4 0;
+  background-color: #D0D5D2;
+  h5 {
+    color: #969591;
+  }
+  .large-up-3 h5 {
+    color: $white;
+    margin-bottom: $global-margin;
+  }
+}
+.copper {
+  padding: $global-padding*4 0 $global-padding*6 0;
+  background-color: #CC8F35;
+  h5 {
+    color: #F6CD66;
+  }
+  .large-up-3 h5 {
+    color: $white;
+    margin-bottom: $global-margin*2;
+  }
+}
+.supporters {
+  padding: $global-padding*6 0;
+}
+.donate {
+  background-color: #EFF3F1;
+  padding: $global-padding*6 0 $global-padding*4 0;
+}
+section.header img {
+  position: relative;
+}

@@ -21,3 +21,11 @@ parameters:
     - { id: "inline", source: "%template_dir%/web/scripts-min/inline.min.js" }
   wordpress.scripts:
     - { id: "app", source: "%template_uri%/web/scripts-min/app-debug.js", deps: ['jquery'], header: false }
+  wordpress.post_types:
+    success_stories:
+      public: true
+      has_archive: true
+      labels: {name: "Success Stories", singular_name: "Success Story"}
+      menu_position: 6
+      menu_icon: "dashicons-portfolio"
+      supports: ["title", "editor", "thumbnail"]
