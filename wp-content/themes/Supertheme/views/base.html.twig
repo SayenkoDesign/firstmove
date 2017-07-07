@@ -41,7 +41,7 @@
 {% block navi %}
     <div data-sticky-container>
         <div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="sticky-start:top" data-margin-top="0" style="width:100%">
-            <div class="large-menu hide-for-small-only">
+            <div class="large-menu show-for-large">
                 <div class="row align-center-middle">
                     <div class="column">
                         {% if logo.get_path %}
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-menu-bar hide-for-medium" data-responsive-toggle="small-menu" data-hide-for="medium">
+            <div class="mobile-menu-bar hide-for-large" data-responsive-toggle="small-menu" data-hide-for="large">
                 <div class="row">
                     <div class="shrink column">
                         <a href=""><i class="fa fa-phone"></i></a>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-menu hide-for-medium" id="small-menu" data-toggler>
+            <div class="mobile-menu hide-for-large" id="small-menu" data-toggler>
                 {% if menu is defined %}
                     {% include 'partials/menu-accordion.html.twig' %}
                 {% endif %}

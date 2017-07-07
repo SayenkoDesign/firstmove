@@ -1,0 +1,26 @@
+.large-menu {
+  padding: $global-padding*2 0 $global-padding 0;
+  li a {
+    color: #454C54;
+    padding: $global-padding;
+    &:hover {
+      color: get-color(primary);
+    }
+  }
+  li.button {
+    margin: 0;
+    padding: 0;
+    a {
+      color: $white;
+      padding: $global-padding/2 $global-padding*2;
+    }
+  }
+}
+.is-stuck {
+  .large-menu {
+    padding: $global-padding/2 0;
+  }
+}
+.admin-bar .is-stuck {
+  margin-top: rem-calc(32px) !important;
+}
