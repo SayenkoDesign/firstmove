@@ -1,0 +1,67 @@
+{% set header_date = 0 %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="members">
+        <section class="callout text-center">
+            <h4>{{ post.about_callout_1_title }}</h4>
+            <p>{{ post.about_callout_1_content }}</p>
+        </section>
+        <div class="row text-center">
+            <div class="small-12 columns">
+                <h4>{{ post.get_field('about_members_title') }}</h4>
+            </div>
+        </div>
+        <div class="row align-center text-center small-up-1 medium-up-2 large-up-3">
+            {% for member in members %}
+                <div class="column member">
+                    <img src="{{ TimberImage(member.about_member_headshot).src }}" alt="">
+                    <h5>{{ member.about_member_name }}</h5>
+                    <h6>{{ member.about_member_position }}</h6>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="list">
+        <section class="callout text-center">
+            <h4>{{ post.about_callout_2_title }}</h4>
+            <p>{{ post.about_callout_2_content }}</p>
+        </section>
+        <div class="row align-center">
+            <div class="shrink columns">
+                <h5>{{ post.about_checklist_left_title }}</h5>
+                <ul class="checklist">
+                    {% for item in left_checklist %}
+                        <li>{{ item.about_checklist_left_item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="shrink columns">
+                <h5>{{ post.about_checklist_right_title }}</h5>
+                <ul class="checklist">
+                    {% for item in right_checklist %}
+                        <li>{{ item.about_checklist_right_item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="boards">
+        {% for board in boards %}
+            <div class="board">
+                <div class="row text-center">
+                    <div class="small-12 columns">
+                        <h4>{{ board.about_board_group_title }}</h4>
+                    </div>
+                </div>
+                <div class="row align-center small-up-1 medium-up-2 large-up-4">
+                    {% for member in board.about_board_members %}
+                        <divv class="column board-member">
+                            <h6>{{ member.about_board_group_name }}</h6>
+                            <h6>{{ member.about_board_group_position}}</h6>
+                        </divv>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}

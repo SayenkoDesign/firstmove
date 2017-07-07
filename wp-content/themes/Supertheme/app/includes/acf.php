@@ -113,7 +113,7 @@ acf_add_local_field_group([
             ACFFieldGenerator::image('about_member_headshot', 'Headshot', 'about_member_headshot', 'id'),
             ACFFieldGenerator::text('about_member_name', 'Name', 'about_member_name', '', null, true,50),
             ACFFieldGenerator::text('about_member_position', 'Position', 'about_member_position', '', null, true,50),
-            ACFFieldGenerator::url('about_member_email', 'Email', 'about_member_email', '', null, false, 50),
+            ACFFieldGenerator::email('about_member_email', 'Email', 'about_member_email', '', null, false, 50),
             ACFFieldGenerator::url('about_member_linkedin', 'Linkedin', 'about_member_linkedin', '', null, false, 50),
             ACFFieldGenerator::wysiwyg(
                 'about_member_bio',

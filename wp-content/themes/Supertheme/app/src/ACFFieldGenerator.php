@@ -81,6 +81,35 @@ class ACFFieldGenerator
         ];
     }
 
+    public static function email(
+        string $key,
+        string $label,
+        string $name,
+        string $instructions = '',
+        string $default_value = null,
+        bool $required = true,
+        int $width = null,
+        string $class = '',
+        string $id = ''
+    ): array
+    {
+        return [
+            'key'   => $key,
+            'label' =>  $label,
+            'name'  => $name,
+            'type'  => "email",
+            'required' => (int) $required,
+            'conditional_logic' => 0,
+            'instructions' => $instructions,
+            'default_value' => $default_value,
+            'wrapper' => [
+                'width' => $width,
+                'class' => $class,
+                'id' => $id,
+            ],
+        ];
+    }
+
     public static function url(
         string $key,
         string $label,

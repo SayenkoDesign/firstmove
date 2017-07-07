@@ -1,0 +1,44 @@
+.members {
+  padding: $global-padding*8 0 $global-padding*4 0;
+  background-color: #EFF3F1;
+  h4 {
+    margin-bottom: $global-margin;
+  }
+  .member {
+    margin-bottom: $global-margin*4;
+    img {
+      border-radius: 100%;
+    }
+    h5 {
+      margin: 0;
+    }
+    h6 {
+      color: #4A4A4A;
+    }
+  }
+}
+.list {
+  padding: $global-padding*8 0 $global-padding*4 0;
+  ul {
+    list-style-type: none;
+    background-image: url("../images-min/checkmark.min.png");
+    background-position: top left;
+    background-repeat:no-repeat;
+    padding-left: $global-padding*2;
+    min-width: rem-calc(280px);
+  }
+}
+.boards {
+  padding: $global-padding*8 0 $global-padding*4 0;
+  background-color: #EFF3F1;
+  h4 {
+    margin-bottom: $global-margin*2;
+  }
+  .board-member {
+    h6 + h6{
+      font-size: rem-calc(14px);
+      color: #454C54;
+      margin-bottom: $global-margin*3;
+    }
+  }
+}
