@@ -11,7 +11,7 @@ jQuery(function() {
         child.attr('data-src', id);
     });
     jQuery('.fancybox').fancybox({
-        toolbar : true,
+        toolbar : true
     });
 
     jQuery('.slick').slick({

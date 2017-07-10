@@ -117,12 +117,14 @@ body.admin-bar .fancybox-inner {
       border: none;
       position: relative;
       &::before {
-        content: '"';
-        font-family:$header-font-family;
-        color: get-color(primary_light);
-        font-size:rem-calc(140px);
+        content: '';
+        display:block;
+        width: 49px;
+        height: 39px;
+        background-image:url('../images-min/testimonial-quote.min.png');
+        background-size: 100%;
         position: absolute;
-        top: -75px;
+        top: -10px;
         left: -20px;
         z-index: 1;
       }
