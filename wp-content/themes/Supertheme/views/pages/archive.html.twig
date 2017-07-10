@@ -5,7 +5,7 @@
         <div class="small-12 medium-8 large-9 columns">
             {% for post in posts %}
                 <div class="post-teaser">
-                    {% include 'partials/header.html.twig' with {post: post, header_link: true} only %}
+                    {% include 'partials/header.html.twig' with {post: post, header_link: true, header_author: 1} only %}
                     <div class="excerpt">
                         {{ post.get_preview(50, false, 'Read More', true, '') }}
                     </div>
