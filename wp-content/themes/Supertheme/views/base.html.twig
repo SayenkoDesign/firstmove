@@ -61,10 +61,7 @@
             </div>
             <div class="mobile-menu-bar hide-for-large" data-responsive-toggle="small-menu" data-hide-for="large">
                 <div class="row">
-                    <div class="shrink column">
-                        <a href=""><i class="fa fa-phone"></i></a>
-                    </div>
-                    <div class="expand column text-center">
+                    <div class="column">
                         {% if mobile_logo.src %}
                             <a href="{{ site.link }}" class="home"><img src="{{ mobile_logo.src|resize(0, 64) }}" alt="{{ site.title }}" class="small-logo"></a>
                         {% else %}
@@ -72,7 +69,7 @@
                         {% endif %}
                     </div>
                     <div class="shrink column">
-                        <a href="#" data-toggle><i class="fa fa-bars"></i></a>
+                        <a href="#" data-toggle><span class="menu-icon"></span></a>
                     </div>
                 </div>
             </div>
