@@ -14,12 +14,53 @@
         <div class="row align-center text-center small-up-1 medium-up-2 large-up-3">
             {% for member in members %}
                 <div class="column member">
-                    <img src="{{ TimberImage(member.about_member_headshot).src }}" alt="">
-                    <h5>{{ member.about_member_name }}</h5>
-                    <h6>{{ member.about_member_position }}</h6>
+                    <a data-fancybox data-src="#member-{{ loop.index }}" href="javascript:;">
+                        <img src="{{ TimberImage(member.about_member_headshot).src }}" alt="">
+                        <h5>{{ member.about_member_name }}</h5>
+                        <h6>{{ member.about_member_position }}</h6>
+                    </a>
                 </div>
             {% endfor %}
         </div>
+        {% for member in members %}
+            <div id="member-{{ loop.index }}" class="member-lightbox" style="display:none">
+                <div class="top row">
+                    <div class="small-12 medium-6 large-4 columns">&nbsp;</div>
+                    <div class="small-12 medium-6 large-8 columns">
+                        <h4>{{ member.about_member_name }}</h4>
+                    </div>
+                </div>
+                <div class="bottom row">
+                    <div class="small-12 medium-6 large-4 columns text-center">
+                        <div>
+                            <img src="{{ TimberImage(member.about_member_headshot).src|resize(160) }}" alt="{{ TimberImage(member.about_member_headshot).title }}" class="headshot">
+                        </div>
+                        <div>
+                            {% if member.about_member_email %}
+                                <a href="mailto:{{ member.about_member_email }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            {% endif %}
+                            {% if member.about_member_linkedin %}
+                                <a href="mailto:{{ member.about_member_linkedin }}" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin-square fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-8 columns">
+                        <h6>{{ member.about_member_position }}</h6>
+                        {{ member.about_member_bio }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </section>
     <section class="list">
         <section class="callout text-center">

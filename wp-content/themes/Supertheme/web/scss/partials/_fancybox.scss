@@ -1,0 +1,85 @@
+body.admin-bar .fancybox-inner {
+  top: 46px;
+  @include breakpoint(783px) {
+    top: 32px;
+  }
+}
+.fancybox-bg {
+  background-color: $black;
+}
+.fancybox-is-open .fancybox-bg {
+  opacity: 0.9;
+}
+.fancybox-slide--video .fancybox-content {
+  width  : 800px;
+  height : 450px;
+  max-width  : 80%;
+  max-height : 80%;
+}
+
+#contact {
+  max-width: rem-calc(800px);
+  padding: 0;
+  .top {
+    padding: $global-padding*5 $global-padding*4 0;
+    h4 {
+      margin-bottom: $global-margin;
+    }
+  }
+  .bottom {
+    background-color: #EFF3F1;
+    padding: 0 $global-padding*4 $global-padding*5;
+    h6 {
+      color: #454C54;
+      font-size: rem-calc(14px);
+      font-weight: $global-weight-normal;
+      margin: rem-calc(12px) 0 rem-calc(20px);
+    }
+  }
+  .gform_footer, .gform_body {
+    display: block;
+  }
+  .gform_footer {
+    text-align: center;
+    .button {
+      padding: rem-calc(12px) rem-calc(105px);
+      border-radius: rem-calc(21px);
+      font-size: rem-calc(14px);
+    }
+  }
+}
+.member-lightbox {
+  max-width: rem-calc(600px);
+  padding: 0;
+  .top {
+    padding: $global-padding*5 $global-padding*4 0;
+    h4 {
+      margin-bottom: $global-margin;
+    }
+  }
+  .bottom {
+    background-color: #EFF3F1;
+    padding: 0 $global-padding*4 $global-padding*5;
+    h6 {
+      color: #454C54;
+      font-size: rem-calc(14px);
+      font-weight: $global-weight-bold;
+      margin: rem-calc(12px) 0 rem-calc(20px);
+      font-family: $body-font-family;
+    }
+    .headshot {
+      margin:$global-margin 0;
+      @include breakpoint(medium) {
+        margin-top: rem-calc(-43px);
+      }
+    }
+    .fa-circle {
+      color: rgb(180,180,180);
+    }
+    a:hover {
+      .fa-circle {
+        color: rgb(120,120,120);
+      }
+    }
+  }
+}
