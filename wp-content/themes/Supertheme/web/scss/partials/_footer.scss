@@ -54,6 +54,9 @@
       margin: 0;
     }
   }
+  input[type=email] {
+    padding: rem-calc(12px) rem-calc(15px);
+  }
 }
 .gform_wrapper {
   text-align: right;
