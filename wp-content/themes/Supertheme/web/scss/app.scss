@@ -9,6 +9,7 @@
 @import "partials/header";
 @import "partials/footer";
 @import "partials/navigation";
+@import "partials/contact";
 @import "partials/steps";
 @import "partials/callout";
 @import "partials/downloads";
@@ -17,6 +18,14 @@
 @import "partials/basic-content";
 @import "partials/donors";
 @import "partials/about";
+
+// forms
+.gform_fields {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
 
 // button
 .secondary.button {

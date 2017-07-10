@@ -86,4 +86,8 @@
     border-bottom-right-radius: rem-calc(21px);
     border-top-right-radius: rem-calc(21px);
   }
+  &:hover, &:active, &:focus{
+    background-color: scale-color(get-color(secondary), $lightness: -15%);
+    outline: none;
+  }
 }

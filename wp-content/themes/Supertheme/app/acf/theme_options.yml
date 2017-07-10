@@ -289,7 +289,23 @@ fields:
     instructions:  ""
     required:  0,
     conditional_logic:  0,
-    wrapper:  { width:  "", class:  "", id:  "" }
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    maxlength:  ""
+    readonly:  0,
+    disabled:  0
+  -
+    key:  "theme_options_contact"
+    label:  "Contact Form ID"
+    name:  "contact"
+    type:  "number"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
     default_value:  ""
     placeholder:  ""
     prepend:  ""
