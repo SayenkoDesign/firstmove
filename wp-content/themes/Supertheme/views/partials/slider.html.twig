@@ -5,6 +5,9 @@
                 <div class="row">
                     <div class="small-12 column text-center">
                         <h4>{{ slide.slide_title }}</h4>
+                        {% if slide.slide_headshot %}
+                            <img src="{{ TimberImage(slide.slide_headshot).src|resize(130) }}" alt="{{ TimberImage(slide.slide_headshot).title }}" class="headshot">
+                        {% endif %}
                         <blockquote>{{ slide.slide_content }}</blockquote>
                         <a href="{{ slide.slide_source_url }}">{{ slide.slide_source_title }}</a>
                     </div>

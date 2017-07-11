@@ -79,7 +79,7 @@
     background-color: rgba(get-color(primary), 0.7);
   }
   .row {
-    max-width:rem-calc(650px);
+    max-width:rem-calc(700px);
     padding: $global-padding*5 $global-padding $global-margin*10 $global-padding;
     position: relative;
     z-index: 2;
@@ -89,6 +89,10 @@
     }
     @include breakpoint(medium) {
       font-size: map-deep-get($header-styles, medium, h5, font-size);
+    }
+    .headshot {
+      display: inline-block;
+      margin-bottom: $global-margin;
     }
     h4 {
       color: $white;
@@ -109,7 +113,7 @@
         background-size: 100%;
         position: absolute;
         top: -10px;
-        left: -20px;
+        left: -30px;
         z-index: 1;
       }
       p {

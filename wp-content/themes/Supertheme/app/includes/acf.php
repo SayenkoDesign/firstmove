@@ -30,6 +30,7 @@ $acf_slider = [
     ACFFieldGenerator::tab('slider_tab', 'Slider', 'slider_tab'),
     ACFFieldGenerator::repeater('slider', 'Slider', 'slider', [
         ACFFieldGenerator::text('slide_title', 'Title', 'slide_title'),
+        ACFFieldGenerator::image('slide_headshot', 'Title', 'slide_headshot','id', '', false),
         ACFFieldGenerator::wysiwyg(
             'slide_content',
             'Content',
