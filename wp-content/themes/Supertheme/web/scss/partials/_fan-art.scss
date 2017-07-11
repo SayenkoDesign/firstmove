@@ -3,19 +3,32 @@
   h4 {
     margin-bottom: $global-margin*2;
   }
+  img {
+    width: 100%;
+  }
   .slick-slide::after {
     display: none;
   }
   .slick-prev {
-    background-color: #000;
+    width: 67px;
+    height: 67px;
+    background-image: url('../images-min/prev-gray.min.png');
     @include breakpoint(xlarge) {
-      left: rem-calc(-64px);
+      left: rem-calc(-100px);
+    }
+    &:hover {
+      background-image: url('../images-min/prev-gray.min.png');
     }
   }
   .slick-next{
-    background-color: #000;
+    width: 67px;
+    height: 67px;
+    background-image: url('../images-min/next-gray.min.png');
     @include breakpoint(xlarge) {
-      right: rem-calc(-64px);
+      right: rem-calc(-100px);
+    }
+    &:hover {
+      background-image: url('../images-min/next-gray.min.png');
     }
   }
 }

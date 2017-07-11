@@ -29,10 +29,12 @@
         </div>
         <div class="row">
             <div class="small-12 columns">
-                <div class="slick" data-slick='{"slidesToShow": 5, "slidesToScroll": 1, "dots": false, "infinite": true, "autoplay": true, "autoplaySpeed": 5000, "speed": 2000, "responsive": {"breakpoint": 600, "settings": { "slidesToShow": 2}}}'>
+                <div class="slick" data-slick='{"slidesToShow": 5, "slidesToScroll": 1, "dots": false, "infinite": true, "autoplay": true, "autoplaySpeed": 5000, "speed": 2000, "responsive": [{"breakpoint": 1000, "settings": { "slidesToShow": 3}},{"breakpoint": 640, "settings": { "slidesToShow": 2}}]}'>
                     {% for slide in fan_art %}
                         <div>
-                            <img src="{{ TimberImage(slide.curriculum_slide_image).src }}" alt="{{ TimberImage(slide.curriculum_slide_image).title }}">
+                            <a data-fancybox="images" href="{{ TimberImage(slide.curriculum_slide_image).src }}" data-caption="<h4>{{ slide.curriculum_slide_title }}</h4><p>{{ slide.curriculum_slide_description }}</p>">
+                                <img src="{{ TimberImage(slide.curriculum_slide_image).src }}" alt="{{ TimberImage(slide.curriculum_slide_image).title }}">
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
