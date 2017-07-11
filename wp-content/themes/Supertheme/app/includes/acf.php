@@ -149,20 +149,31 @@ acf_add_local_field_group([
         ),
         // board
         ACFFieldGenerator::tab('about_board_tab', 'Board', 'about_board_tab'),
-        ACFFieldGenerator::repeater('about_board', 'Boards', 'about_board', [
-            ACFFieldGenerator::text('about_board_group_title', 'Title', 'about_board_group_title'),
+        ACFFieldGenerator::text('about_board_members_title', 'Board Members Title', 'about_board_members_title'),
+        ACFFieldGenerator::repeater('about_board_members', 'Board Members', 'about_board_members', [
+            ACFFieldGenerator::text('about_board_members_name', 'Name', 'about_board_members_name', '&nbsp;', null, true, 50),
+            ACFFieldGenerator::text('about_board_members_position', 'Position', 'about_board_members_position', 'use &lt;br /&gt; to force a line break', null, true, 50),
             ACFFieldGenerator::wysiwyg(
-                'about_board_content',
+                'about_board_members_bio',
                 'Lightbox Content',
-                'about_board_content',
+                'about_board_members_bio',
                 ACFFieldGenerator::WYSIWYG_TAB_ALL,
                 ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
                 false
             ),
-            ACFFieldGenerator::repeater('about_board_members', 'Board Members', 'about_board_members', [
-                ACFFieldGenerator::text('about_board_group_name', 'Name', 'about_board_group_name', '&nbsp;', null, true, 50),
-                ACFFieldGenerator::text('about_board_group_position', 'Position', 'about_board_group_position', 'use &lt;br /&gt; to force a line break', null, true, 50),
-            ]),
+        ]),
+        ACFFieldGenerator::text('about_board_advisory_title', 'Board Advisory Title', 'about_board_advisory_title'),
+        ACFFieldGenerator::repeater('about_board_advisory', 'Board Advisory', 'about_board_advisory', [
+            ACFFieldGenerator::text('about_board_advisory_name', 'Name', 'about_board_advisory_name', '&nbsp;', null, true, 50),
+            ACFFieldGenerator::text('about_board_advisory_position', 'Position', 'about_board_advisory_position', 'use &lt;br /&gt; to force a line break', null, true, 50),
+            ACFFieldGenerator::wysiwyg(
+                'about_board_advisory_bio',
+                'Lightbox Content',
+                'about_board_advisory_bio',
+                ACFFieldGenerator::WYSIWYG_TAB_ALL,
+                ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+                false
+            ),
         ]),
     ],
     'location' => [

@@ -87,22 +87,69 @@
         </div>
     </section>
     <section class="boards">
-        {% for board in boards %}
-            <div class="board">
-                <div class="row text-center">
-                    <div class="small-12 columns">
-                        <h4>{{ board.about_board_group_title }}</h4>
-                    </div>
-                </div>
-                <div class="row align-center small-up-1 medium-up-2 large-up-4">
-                    {% for member in board.about_board_members %}
-                        <divv class="column board-member">
-                            <h6>{{ member.about_board_group_name }}</h6>
-                            <h6>{{ member.about_board_group_position}}</h6>
-                        </divv>
-                    {% endfor %}
+        <div class="board">
+            <div class="row text-center">
+                <div class="small-12 columns">
+                    <h4>{{ post.get_field("about_board_members_title") }}</h4>
                 </div>
             </div>
-        {% endfor %}
+            <div class="row align-center small-up-1 medium-up-2 large-up-4">
+                {% for member in board_members %}
+                    <div class="column board-member">
+                        <a data-fancybox data-src="#board-member-{{ loop.index }}" href="javascript:;">
+                            <h6>{{ member.about_board_members_name }}</h6>
+                            <h6>{{ member.about_board_members_position}}</h6>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            {% for member in board_members %}
+                <div id="board-member-{{ loop.index }}" class="member-lightbox" style="display:none">
+                    <div class="top row">
+                        <div class="small-12 columns">
+                            <h4>{{ member.about_board_members_name }}</h4>
+                        </div>
+                    </div>
+                    <div class="bottom row">
+                        <div class="small-12 columns">
+                            <h6>{{ member.about_board_members_position}}</h6>
+                            {{ member.about_board_members_bio }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="board">
+            <div class="row text-center">
+                <div class="small-12 columns">
+                    <h4>{{ post.get_field("about_board_advisory_title") }}</h4>
+                </div>
+            </div>
+            <div class="row align-center small-up-1 medium-up-2 large-up-4">
+                {% for member in board_advisory %}
+                    <div class="column board-member">
+                        <a data-fancybox data-src="#board-advisor-{{ loop.index }}" href="javascript:;">
+                            <h6>{{ member.about_board_advisory_name }}</h6>
+                            <h6>{{ member.about_board_advisory_position}}</h6>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            {% for member in board_advisory %}
+                <div id="board-advisor-{{ loop.index }}" class="member-lightbox" style="display:none">
+                    <div class="top row">
+                        <div class="small-12 columns">
+                            <h4>{{ member.about_board_advisory_name }}</h4>
+                        </div>
+                    </div>
+                    <div class="bottom row">
+                        <div class="small-12 columns">
+                            <h6>{{ member.about_board_advisory_position}}</h6>
+                            {{ member.about_board_advisory_bio }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}
