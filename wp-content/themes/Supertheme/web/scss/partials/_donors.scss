@@ -1,7 +1,13 @@
 .platinum, .gold, .silver, .copper {
   color: $white;
+  .icon-title {
+    margin-bottom: $global-margin*2;
+  }
   .donor-icon {
     margin-bottom: $global-margin*2;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
   }
   .donor-logo {
     margin-bottom: $global-margin*4;
@@ -11,6 +17,10 @@
   }
   h6 {
     color: $white;
+  }
+  .large-up-3 h5, .large-up-4 h5, .large-up-5 h5 {
+    color: $white;
+    margin-bottom: $global-margin;
   }
 }
 .platinum {
@@ -33,10 +43,6 @@
   h5 {
     color: #969591;
   }
-  .large-up-3 h5 {
-    color: $white;
-    margin-bottom: $global-margin;
-  }
 }
 .copper {
   padding: $global-padding*4 0 $global-padding*6 0;
@@ -51,6 +57,9 @@
 }
 .supporters {
   padding: $global-padding*8 0;
+  h4 {
+    margin-bottom: $global-margin;
+  }
 }
 .donate {
   background-color: #EFF3F1;

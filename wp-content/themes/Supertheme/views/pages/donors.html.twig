@@ -12,7 +12,7 @@
                     <img src="{{ TimberImage(row.donors_alt_content_image).src }}" alt="{{ TimberImage(row.donors_alt_content_image).title }}">
                 </div>
                 <div class="small-12 medium-7 columns {% if loop.index % 2 == 0 %}medium-order-1{% endif %}">
-                    <h4>{{ download.donors_alt_content_title }}</h4>
+                    <h4>{{ row.donors_alt_content_title }}</h4>
                     {{ row.donors_alt_content_content }}
                     {% if row.donors_button_text and row.donors_button_file %}
                         <a href="{{ row.donors_button_file }}" class="secondary button" target="_blank">{{ row.donors_button_text }}</a>
@@ -32,13 +32,11 @@
         <section class="callout text-center">
             <h4>{{ post.get_field('donors_callout_2_title') }}</h4>
             <p>{{ post.get_field('donors_callout_2_content') }}</p>
+            {% if post.get_field('donors_callout_2_button_file') and post.get_field('donors_callout_2_button_text') %}
+                <a href="{{ post.get_field('donors_callout_2_button_file') }}" class="secondary button">{{ post.get_field('donors_callout_2_button_text') }}</a>
+            {% endif %}
         </section>
-        <div class="row">
-            <div class="small-12 columns text-center">
-                <a href="{{ post.donors_platinum_button_file }}" class="secondary button">{{ post.get_field('donors_platinum_button_text') }}</a>
-            </div>
-        </div>
-        <div class="row align-center">
+        <div class="row align-center-middle icon-title">
             <div class="shrink column">
                 <img src="{{ TimberImage(post.get_field('donors_platinum_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_platinum_icon')).title }}" class="donor-icon">
             </div>
@@ -50,13 +48,16 @@
         <div class="row small-up-1 medium-up-2 large-up-3 align-center text-center">
             {% for donor in platinum %}
                 <div class="column">
-                    <img src="{{ TimberImage(donor.donors_platinum_donor).src }}" alt="{{ TimberImage(donor.donors_platinum_donor).title }}" class="donor-logo">
+                    {% if donor.donors_platinum_donor_url %}<a href="{{ donor.donors_platinum_donor_url }}" target="_blank">{% endif %}
+                        <img src="{{ TimberImage(donor.donors_platinum_donor_image).src }}" alt="{{ TimberImage(donor.donors_platinum_donor_image).title }}" class="donor-logo">
+                        <h5>{{ donor.donors_platinum_donor_text }}</h5>
+                    {% if donor.donors_platinum_donor_url %}</a>{% endif %}
                 </div>
             {% endfor %}
         </div>
     </section>
     <section class="gold">
-        <div class="row align-center">
+        <div class="row align-center-middle icon-title">
             <div class="shrink column">
                 <img src="{{ TimberImage(post.get_field('donors_gold_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_gold_icon')).title }}" class="donor-icon">
             </div>
@@ -69,12 +70,16 @@
             {% for donor in gold %}
                 <div class="column">
                     <img src="{{ TimberImage(donor.donors_gold_donor).src }}" alt="{{ TimberImage(donor.donors_gold_donor).title }}" class="donor-logo">
+                    {% if donor.donors_gold_donor_url %}<a href="{{ donor.donors_gold_donor_url }}" target="_blank">{% endif %}
+                        <img src="{{ TimberImage(donor.donors_gold_donor_image).src }}" alt="{{ TimberImage(donor.donors_gold_donor_image).title }}" class="donor-logo">
+                        <h5>{{ donor.donors_gold_donor_text }}</h5>
+                    {% if donor.donors_gold_donor_url %}</a>{% endif %}
                 </div>
             {% endfor %}
         </div>
     </section>
     <section class="silver">
-        <div class="row align-center">
+        <div class="row align-center-middle icon-title">
             <div class="shrink column">
                 <img src="{{ TimberImage(post.get_field('donors_silver_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_silver_icon')).title }}" class="donor-icon">
             </div>
@@ -86,13 +91,15 @@
         <div class="row small-up-2 medium-up-3 large-up-3 align-center text-center">
             {% for donor in silver %}
                 <div class="column">
-                    <h5>{{ donor.donors_silver_donor }}</h5>
+                    {% if donor.donors_silver_donor_url %}<a href="{{ donor.donors_silver_donor_url }}" target="_blank">{% endif %}
+                        <h5>{{ donor.donors_silver_donor_text }}</h5>
+                    {% if donor.donors_silver_donor_url %}</a>{% endif %}
                 </div>
             {% endfor %}
         </div>
     </section>
     <section class="copper">
-        <div class="row align-center">
+        <div class="row align-center-middle icon-title">
             <div class="shrink column">
                 <img src="{{ TimberImage(post.get_field('donors_copper_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_copper_icon')).title }}" class="donor-icon">
             </div>
@@ -104,7 +111,9 @@
         <div class="row small-up-2 medium-up-3 large-up-3 align-center text-center">
             {% for donor in copper %}
                 <div class="column">
-                    <h5>{{ donor.donors_copper_donor }}</h5>
+                    {% if donor.donors_copper_donor_url %}<a href="{{ donor.donors_copper_donor_url }}" target="_blank">{% endif %}
+                        <h5>{{ donor.donors_copper_donor_text }}</h5>
+                    {% if donor.donors_copper_donor_url %}</a>{% endif %}
                 </div>
             {% endfor %}
         </div>
@@ -113,14 +122,10 @@
         <section class="callout text-center">
             <h4>{{ post.get_field('donors_callout_3_title') }}</h4>
             <p>{{ post.get_field('donors_callout_3_content') }}</p>
+            {% if post.get_field('donors_callout_3_button_text') and post.get_field('donors_callout_3_button_url') %}
+                <a href="{{ post.get_field('donors_callout_3_button_url') }}" class="secondary button" target="_blank">{{ post.get_field('donors_callout_3_button_text') }}</a>
+            {% endif %}
         </section>
-        <div class="row">
-            <div class="small-12 columns text-center">
-                {% if post.get_field('donors_supporters_button_text') and post.get_field('donors_supporters_button_url') %}
-                    <a href="{{ post.get_field('donors_supporters_button_url') }}" class="secondary button" target="_blank">{{ post.get_field('donors_supporters_button_text') }}</a>
-                {% endif %}
-            </div>
-        </div>
         <div class="row">
             <div class="small-12 columns text-center">
                 <h4>{{ post.get_field('donors_supporters_title') }}</h4>

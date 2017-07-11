@@ -353,44 +353,50 @@ acf_add_local_field_group([
             ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
             false
         ),
-        // platinum
-        ACFFieldGenerator::tab('donors_platinum_tab', 'Platinum', 'donors_platinum_tab'),
-        ACFFieldGenerator::text('donors_platinum_button_text', 'Button Text', 'donors_platinum_button_text', '', null, false, 50),
+        ACFFieldGenerator::text('donors_callout_2_button_text', 'Button Text', 'donors_callout_2_button_text', '', null, false, 50),
         ACFFieldGenerator::file(
-            'donors_platinum_button_file',
+            'donors_callout_2_button_file',
             'Button File',
-            'donors_platinum_button_file',
+            'donors_callout_2_button_file',
             '',
             ACFFieldGenerator::FILE_RETURN_URL,
             null,
             false,
             50
         ),
+        // platinum
+        ACFFieldGenerator::tab('donors_platinum_tab', 'Platinum', 'donors_platinum_tab'),
         ACFFieldGenerator::text('donors_platinum_subtext', 'Subtext', 'donors_platinum_subtext', '', null, true, 50),
         ACFFieldGenerator::image('donors_platinum_icon', 'Icon', 'donors_platinum_icon', 'id', '', true, 50),
         ACFFieldGenerator::repeater('donors_platinum_donors', 'Donors', 'donors_platinum_donors', [
-            ACFFieldGenerator::image('donors_platinum_donor', 'Donor Logo', 'donors_platinum_donor', 'id'),
+            ACFFieldGenerator::image('donors_platinum_donor_image', 'Donor Logo', 'donors_platinum_donor_image', 'id', '', true, 33),
+            ACFFieldGenerator::text('donors_platinum_donor_text', 'Text', 'donors_platinum_donor_text', '', null, false, 33),
+            ACFFieldGenerator::url('donors_platinum_donor_url', 'URL', 'donors_platinum_donor_url', '', null, false, 34),
         ]),
         // gold
         ACFFieldGenerator::tab('donors_gold_tab', 'Gold', 'donors_gold_tab'),
         ACFFieldGenerator::text('donors_gold_subtext', 'Subtext', 'donors_gold_subtext', '', null, true, 50),
         ACFFieldGenerator::image('donors_gold_icon', 'Icon', 'donors_gold_icon', 'id', '', true, 50),
         ACFFieldGenerator::repeater('donors_gold_donors', 'Donors', 'donors_gold_donors', [
-            ACFFieldGenerator::image('donors_gold_donor', 'Donor Logo', 'donors_gold_donor', 'id'),
+            ACFFieldGenerator::image('donors_gold_donor_image', 'Donor Logo', 'donors_gold_donor_image', 'id', '', true, 33),
+            ACFFieldGenerator::text('donors_gold_donor_text', 'Text', 'donors_gold_donor_text', '', null, false, 33),
+            ACFFieldGenerator::url('donors_gold_donor_url', 'URL', 'donors_gold_donor_url', '', null, false, 34),
         ]),
         // silver
         ACFFieldGenerator::tab('donors_silver_tab', 'Silver', 'donors_silver_tab'),
         ACFFieldGenerator::text('donors_silver_subtext', 'Subtext', 'donors_silver_subtext', '', null, true, 50),
         ACFFieldGenerator::image('donors_silver_icon', 'Icon', 'donors_silver_icon', 'id', '', true, 50),
         ACFFieldGenerator::repeater('donors_silver_donors', 'Donors', 'donors_silver_donors', [
-            ACFFieldGenerator::text('donors_silver_donor', 'Donor', 'donors_silver_donor'),
+            ACFFieldGenerator::text('donors_silver_donor_text', 'Text', 'donors_silver_donor_text', '', null, true, 50),
+            ACFFieldGenerator::url('donors_silver_donor_url', 'URL', 'donors_silver_donor_url', '', null, false, 50),
         ]),
         //copper
         ACFFieldGenerator::tab('donors_copper_tab', 'Copper', 'donors_copper_tab'),
         ACFFieldGenerator::text('donors_copper_subtext', 'Subtext', 'donors_copper_subtext', '', null, true, 50),
         ACFFieldGenerator::image('donors_copper_icon', 'Icon', 'donors_copper_icon', 'id', '', true, 50),
         ACFFieldGenerator::repeater('donors_copper_donors', 'Donors', 'donors_copper_donors', [
-            ACFFieldGenerator::text('donors_copper_donor', 'Subtext', 'donors_copper_donor'),
+            ACFFieldGenerator::text('donors_copper_donor_text', 'Text', 'donors_copper_donor_text', '', null, true, 50),
+            ACFFieldGenerator::url('donors_silver_copper_url', 'URL', 'donors_copper_donor_url', '', null, false, 50),
         ]),
         // callout
         ACFFieldGenerator::tab('donors_callout_3_tab', 'Call Out', 'donors_callout_3_tab'),
@@ -403,10 +409,10 @@ acf_add_local_field_group([
             ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
             false
         ),
+        ACFFieldGenerator::text('donors_callout_3_button_text', 'Button Text', 'donors_callout_3_button_text', '', null, false, 50),
+        ACFFieldGenerator::url('donors_callout_3_button_url', 'Button URL', 'donors_callout_3_button_url', '', null, false, 50),
         // supporters
         ACFFieldGenerator::tab('donors_supporters_tab', 'Supporters', 'donors_supporters_tab'),
-        ACFFieldGenerator::text('donors_supporters_button_text', 'Button Text', 'donors_supporters_button_text', '', null, false, 50),
-        ACFFieldGenerator::url('donors_supporters_button_url', 'Button URL', 'donors_supporters_button_url', '', null, false, 50),
         ACFFieldGenerator::text('donors_supporters_title', 'Title', 'donors_supporters_title'),
         ACFFieldGenerator::repeater('donors_supporters_donors', 'Supporters', 'donors_supporters_donors', [
             ACFFieldGenerator::image('donors_supporters_donor', 'Supporter', 'donors_supporters_donor', 'id'),

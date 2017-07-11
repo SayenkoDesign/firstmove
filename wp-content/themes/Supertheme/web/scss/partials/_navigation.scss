@@ -22,7 +22,12 @@
   }
 }
 .admin-bar .is-stuck {
-  margin-top: rem-calc(32px) !important;
+  @include breakpoint(601px) {
+    margin-top: rem-calc(46px) !important;
+  }
+  @include breakpoint(782px) {
+    margin-top: rem-calc(32px) !important;
+  }
 }
 .mobile-menu-bar {
   padding: $global-padding;
@@ -46,4 +51,7 @@
   width: rem-calc(38px);
   height: rem-calc(34px);
   background-image: url("../images-min/menu-icon.min.png");
+  &::after {
+    display: none;
+  }
 }
