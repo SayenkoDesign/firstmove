@@ -15,7 +15,7 @@ jQuery(function() {
     });
 
     jQuery('.slick').slick({
-        dots: true
+        dots: true,
     });
 
     // scroll to top

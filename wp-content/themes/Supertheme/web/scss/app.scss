@@ -57,8 +57,17 @@
 }
 
 // slick
+.slick-track{
+  display: flex;
+  .slick-slide{
+    display: flex;
+    height: auto;
+    align-items: center; //optional
+    justify-content: center; //optional
+  }
+}
 .slider {
-  height: auto;
+  height:auto;
   margin: 0;
 }
 .slick-dotted.slick-slider {
