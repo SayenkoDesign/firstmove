@@ -19,13 +19,19 @@
 }
 .list {
   padding: $global-padding*8 0 $global-padding*4 0;
+  h5 {
+    margin-bottom: $global-margin;
+  }
   ul {
     list-style-type: none;
-    background-image: url("../images-min/checkmark.min.png");
-    background-position: top left;
-    background-repeat:no-repeat;
-    padding-left: $global-padding*2;
     min-width: rem-calc(280px);
+    li {
+      background-image: url("../images-min/checkmark.min.png");
+      background-position: top left;
+      background-repeat:no-repeat;
+      padding-left: $global-padding*2;
+      margin-bottom: $global-margin;
+    }
   }
 }
 .boards {
