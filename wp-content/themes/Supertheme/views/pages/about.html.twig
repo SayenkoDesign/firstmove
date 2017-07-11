@@ -1,7 +1,7 @@
 {% set header_date = 0 %}
 {% extends 'base.html.twig' %}
 {% block body %}
-    <section class="members">
+    <section class="members" id="leadership">
         <section class="callout-header text-center">
             <h4>{{ post.about_callout_1_title }}</h4>
             <p>{{ post.about_callout_1_content }}</p>
@@ -62,7 +62,7 @@
             </div>
         {% endfor %}
     </section>
-    <section class="list">
+    <section class="list" id="values">
         <section class="callout text-center">
             <h4>{{ post.about_callout_2_title }}</h4>
             <p>{{ post.about_callout_2_content }}</p>
@@ -87,7 +87,7 @@
         </div>
     </section>
     <section class="boards">
-        <div class="board">
+        <div class="board" id="board-members">
             <div class="row text-center">
                 <div class="small-12 columns">
                     <h4>{{ post.get_field("about_board_members_title") }}</h4>
@@ -119,7 +119,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="board">
+        <div class="board" id="advisory-board">
             <div class="row text-center">
                 <div class="small-12 columns">
                     <h4>{{ post.get_field("about_board_advisory_title") }}</h4>
