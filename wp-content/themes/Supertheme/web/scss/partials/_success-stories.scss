@@ -1,0 +1,21 @@
+.success-story-teaser {
+  a {
+    position: relative;
+    margin-bottom: $global-margin;
+    &:hover {
+      opacity: 0.6;
+    }
+    h4 {
+      font-family: $body-font-family;
+      position: absolute;
+      left: $global-padding;
+      right: $global-padding;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}

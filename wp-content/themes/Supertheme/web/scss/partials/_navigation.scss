@@ -55,3 +55,22 @@
     display: none;
   }
 }
+
+.navigation {
+  margin-bottom: $global-margin*2;
+  @include breakpoint(large) {
+    margin-top: $global-margin*-10;
+  }
+  a {
+    display: inline-block;
+    font-size: 0;
+    width: 67px;
+    height: 67px;
+  }
+  .text-left a {
+    background-image: url('../images-min/prev-gray.min.png');
+  }
+  .text-right a {
+    background-image: url('../images-min/next-gray.min.png');
+  }
+}

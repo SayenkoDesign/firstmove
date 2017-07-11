@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% set header_author = 0 %}
+{% set header_date = 0 %}
+{% block content %}
+    <div class="row show-for-medium">
+        <div class="medium-4 columns">
+            {% for post in posts %}
+                {% if loop.index % 3 == 1 %}
+                    <div class="success-story-teaser">
+                        <a href="{{ post.link }}">
+                            <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.title }}">
+                            <h4>{{ post.title }}</h4>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="medium-4 columns">
+            {% for post in posts %}
+                {% if loop.index % 3 == 2 %}
+                    <div class="success-story-teaser">
+                        <a href="{{ post.link }}">
+                            <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.title }}">
+                            <h4>{{ post.title }}</h4>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="medium-4 columns">
+            {% for post in posts %}
+                {% if loop.index % 3 == 0 %}
+                    <div class="success-story-teaser">
+                        <a href="{{ post.link }}">
+                            <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.title }}">
+                            <h4>{{ post.title }}</h4>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row show-for-small-only">
+        <div class="small-12 columns">
+            {% for post in posts %}
+                <div class="success-story-teaser">
+                    <a href="{{ post.link }}">
+                        <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.title }}">
+                        <h4>{{ post.title }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
