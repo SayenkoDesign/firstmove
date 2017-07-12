@@ -37,7 +37,7 @@ jQuery(function() {
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    jQuery('.sticky-container a').click(function(e){
+    jQuery('.sticky-container .submenu a').click(function(e){
         var scrollto = getParameterByName('scrollTo', jQuery(this).attr("href"));
         var href = jQuery(this).attr("href");
         href = href.substring(0, href.indexOf('?'));
