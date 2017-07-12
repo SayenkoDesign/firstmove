@@ -299,8 +299,8 @@ acf_add_local_field_group([
 
 // Donors
 acf_add_local_field_group([
-    'key' => 'success_stories',
-    'title' => 'Success Stories',
+    'key' => 'group_donors_stories',
+    'title' => 'Donors',
     'fields' => [
         // callout
         ACFFieldGenerator::tab('donors_callout_1_tab', 'Call Out', 'donors_callout_1_tab'),
