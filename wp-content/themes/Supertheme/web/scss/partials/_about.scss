@@ -40,6 +40,9 @@
   h4 {
     margin-bottom: $global-margin*2;
   }
+  .board {
+    margin-bottom: $global-margin;
+  }
   .board-member {
     h6 + h6{
       font-size: rem-calc(14px);
