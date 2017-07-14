@@ -51,7 +51,6 @@ jQuery(function() {
             e.preventDefault();
             return false;
         }
-        return false;
     });
     if(getParameterByName('scrollTo')) {
         jQuery('html, body').animate({

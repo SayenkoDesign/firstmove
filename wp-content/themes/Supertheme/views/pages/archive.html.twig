@@ -3,9 +3,9 @@
 {% block content %}
     <div class="row">
         <div class="small-12 medium-8 large-9 columns">
-            {% for post in posts %}
+            {% for article in posts %}
                 <div class="post-teaser">
-                    {% include 'partials/header.html.twig' with {post: post, header_link: true, header_author: 1} only %}
+                    {% include 'partials/header.html.twig' with {post: article, header_link: true, header_author: 1, header_image: TimberImage(article.get_field('header_image'))|default(0)} only %}
                     <div class="excerpt">
                         {{ post.get_preview(50, false, 'Read More', true, '') }}
                     </div>

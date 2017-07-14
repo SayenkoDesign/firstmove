@@ -20,15 +20,17 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="small-12 medium-6 columns">
-                <h4>{{ post.success_left_title }}</h4>
-                {{ post.success_left_content }}
+        <section class="two-col">
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <h4>{{ post.success_left_title }}</h4>
+                    {{ post.success_left_content }}
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <h4>{{ post.success_right_title }}</h4>
+                    {{ post.success_left_content }}
+                </div>
             </div>
-            <div class="small-12 medium-6 columns">
-                <h4>{{ post.success_right_title }}</h4>
-                {{ post.success_left_content }}
-            </div>
-        </div>
+        </section>
     </section>
 {% endblock %}

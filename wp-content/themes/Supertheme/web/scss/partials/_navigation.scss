@@ -9,7 +9,7 @@
     }
   }
   li.button {
-    margin: 0;
+    margin: 0 0 0 $global-padding;
     padding: 0;
     a {
       color: $white;
@@ -19,7 +19,7 @@
   .dropdown.menu > li.is-dropdown-submenu-parent {
     position: inherit;
     > a {
-      padding: $global-padding/2 $global-padding*2;
+      padding: $global-padding;
       &::after {
         display: none;
       }

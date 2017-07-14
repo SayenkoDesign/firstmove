@@ -37,7 +37,7 @@
         <div class="author">
             <a href="{{ post.author.link }}" class="author-link">
                 <div class="author-profile">
-                    <img src="{{ post.author.avatar.src|resize(96) }}" />
+                    {{ function("get_avatar", post.author.ID, 96) }}
                 </div>
                 <div class="author-name">
                     By

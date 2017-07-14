@@ -4,6 +4,9 @@ body.admin-bar .fancybox-inner {
     top: 32px;
   }
 }
+.fancybox-close-small:focus:after {
+  outline: none;
+}
 .fancybox-bg {
   background-color: $black;
 }
@@ -15,6 +18,9 @@ body.admin-bar .fancybox-inner {
   height : 450px;
   max-width  : 80%;
   max-height : 80%;
+}
+.fancybox-close-small:after {
+  font-size: rem-calc(40px);
 }
 
 #contact {
@@ -67,8 +73,14 @@ body.admin-bar .fancybox-inner {
       margin: rem-calc(12px) 0 rem-calc(20px);
       font-family: $body-font-family;
     }
+    .text-center {
+      @include breakpoint(small only) {
+        text-align: left;
+      }
+    }
     .headshot {
       margin:$global-margin 0;
+      border-radius: 100%;
       @include breakpoint(medium) {
         margin-top: rem-calc(-43px);
       }

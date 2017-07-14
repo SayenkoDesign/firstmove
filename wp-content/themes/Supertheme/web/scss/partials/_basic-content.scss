@@ -1,7 +1,15 @@
 .basic-content {
   background-color: #EFF3F1;
   padding: $global-padding*4 0;
+  .two-col .columns {
+    @include breakpoint(small only) {
+      margin-bottom: $global-margin*2;
+    }
+  }
 }
 .single-success_stories .basic-content {
   padding-top: $global-padding*8;
+}
+.post-template-default .basic-content {
+  background-color: transparent;
 }

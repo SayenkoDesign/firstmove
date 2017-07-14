@@ -1,6 +1,10 @@
 <?php
 require_once __DIR__.'/app/bootstrap.php';
 
+add_filter('jpeg_quality', function(){
+    return 100;
+});
+
 add_filter('timber/context', function($data) {
     $data['menu'] = new Timber\Menu('primary_menu');
     $data['footer_menu'] = new Timber\Menu('footer_menu');
@@ -24,4 +28,9 @@ add_action('wp_enqueue_scripts', function() {
         "universalAnalytics" => true,
     ];
     wp_localize_script( 'app', 'SP', $SP);
+});
+
+add_shortcode('lead', function($atts, $content = null){
+
+    return "<p class='lead'>$content</p>";
 });

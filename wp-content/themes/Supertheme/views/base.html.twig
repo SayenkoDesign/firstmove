@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1">
-        <meta name="description" content="{{ site.description }}">
         <link rel="pingback" href="{{ site.pingback_url }}" />
 
         {% if favicon %}
@@ -45,7 +44,7 @@
                 <div class="row align-center-middle">
                     <div class="column">
                         {% if logo.get_path %}
-                            <a href="{{ site.link }}" class="home"><img src="{{ logo.src|resize(0, 64) }}" alt="{{ site.title }}" class="large-logo"></a>
+                            <a href="{{ site.link }}" class="home"><img src="{{ logo.src|resize(0, 46) }}" alt="{{ site.title }}" class="large-logo"></a>
                         {% else %}
                             <a href="{{ site.link }}" class="home">{{ site.title }}</a>
                         {% endif %}
@@ -63,7 +62,7 @@
                 <div class="row">
                     <div class="column">
                         {% if mobile_logo.src %}
-                            <a href="{{ site.link }}" class="home"><img src="{{ mobile_logo.src|resize(0, 64) }}" alt="{{ site.title }}" class="small-logo"></a>
+                            <a href="{{ site.link }}" class="home"><img src="{{ mobile_logo.src|resize(0, 46) }}" alt="{{ site.title }}" class="small-logo"></a>
                         {% else %}
                             <a href="{{ site.link }}" class="home">{{ site.title }}</a>
                         {% endif %}

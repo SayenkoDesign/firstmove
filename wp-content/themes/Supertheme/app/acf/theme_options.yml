@@ -127,9 +127,9 @@ fields:
     max_size:  ""
     mime_types:  ""
   -
-    key:  "theme_options_logo_alt"
-    label:  "Alt Logo"
-    name:  "alt_logo"
+    key:  "theme_options_login_logo"
+    label:  "Login Logo"
+    name:  "login_logo"
     type:  "image"
     instructions:  ""
     required:  0
@@ -282,22 +282,6 @@ fields:
     placement: "left"
     endpoint: 0
   -
-    key:  "theme_options_signin"
-    label:  "Sign in URL"
-    name:  "signin"
-    type:  "url"
-    instructions:  ""
-    required:  0,
-    conditional_logic:  0,
-    wrapper:  { width:  "50", class:  "", id:  "" }
-    default_value:  ""
-    placeholder:  ""
-    prepend:  ""
-    append:  ""
-    maxlength:  ""
-    readonly:  0,
-    disabled:  0
-  -
     key:  "theme_options_contact"
     label:  "Contact Form ID"
     name:  "contact"
@@ -305,7 +289,7 @@ fields:
     instructions:  ""
     required:  0,
     conditional_logic:  0,
-    wrapper:  { width:  "50", class:  "", id:  "" }
+    wrapper:  { width:  "", class:  "", id:  "" }
     default_value:  ""
     placeholder:  ""
     prepend:  ""
