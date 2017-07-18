@@ -14,6 +14,7 @@
     text-shadow: 1px 1px 15px rgba($black,0.5);
     max-width: rem-calc(600px);
     margin: 0 auto;
+    font-family: $header-font-family;
     font-size: map-deep-get($header-styles, small, h5, font-size);
     @include breakpoint(medium) {
       font-size: map-deep-get($header-styles, medium, h5, font-size);
@@ -32,7 +33,12 @@
   }
 }
 .header .header-no-link {
-  padding: $global-padding*6 0 $global-padding*12;
+  padding: $global-padding*6 0;
+}
+.page-template-curriculum, .page-template-about, .page-template-donors, .single-success_stories {
+  .header .header-no-link {
+    padding: $global-padding*6 0 $global-padding*12;
+  }
 }
 .page-template-how-it-works .header {
   .header-title {

@@ -4,6 +4,7 @@
   border-top: rem-calc(3px) solid get-color(secondary);
   padding: $global-padding $global-padding*2 $global-padding*3;
   font-size:rem-calc(18px);
+  font-family: $header-font-family;
   margin: $global-margin*-12 auto $global-margin*4 auto;
   box-shadow: 1px 1px 6px 0 rgba(0,0,0,0.13);
   max-width:rem-calc(400px);

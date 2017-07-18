@@ -13,7 +13,9 @@ jQuery(function() {
     });
 
     jQuery('.fancybox').fancybox({
-        toolbar : true
+        toolbar : true,
+        beforeClose : function( instance, current, e ) {
+        }
     });
 
     jQuery('.slick').slick({

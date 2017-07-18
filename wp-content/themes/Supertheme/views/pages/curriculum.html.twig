@@ -33,7 +33,7 @@
                     {% for slide in fan_art %}
                         <div>
                             <a data-fancybox="images" href="{{ TimberImage(slide.curriculum_slide_image).src }}" data-caption="<h4>{{ slide.curriculum_slide_title }}</h4><p>{{ slide.curriculum_slide_description }}</p>">
-                                <img src="{{ TimberImage(slide.curriculum_slide_image).src }}" alt="{{ TimberImage(slide.curriculum_slide_image).title }}">
+                                <img src="{{ TimberImage(slide.curriculum_slide_image).src|resize(300,300) }}" alt="{{ TimberImage(slide.curriculum_slide_image).title }}">
                             </a>
                         </div>
                     {% endfor %}

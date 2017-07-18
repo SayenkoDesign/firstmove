@@ -22,6 +22,14 @@
                     <div class="content">
                         {{ function('the_content', post.post_content) }}
                     </div>
+                    <div class="categories">
+                        {% for cat in post.categories %}
+                            <a href="{{cat.link}}" class="hollow button">{{cat.name}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="share">
+                        {% include 'partials/sharethis.html.twig' %}
+                    </div>
                 </div>
             </div>
             <div class="small-12 medium-4 large-3 columns">

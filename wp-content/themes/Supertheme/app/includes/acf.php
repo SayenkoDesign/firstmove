@@ -340,7 +340,7 @@ acf_add_local_field_group([
         ]),
         // section header
         ACFFieldGenerator::tab('donors_section_tab', 'Section Header', 'donors_section_tab'),
-        ACFFieldGenerator::image('donors_section_background_image', 'Background Image', 'donors_section_image', 'id'),
+        ACFFieldGenerator::image('donors_section_background_image', 'Background Image', 'donors_section_background_image', 'id'),
         ACFFieldGenerator::image('donors_section_image', 'Image', 'donors_section_image', 'id'),
         // callout
         ACFFieldGenerator::tab('donors_callout_2_tab', 'Call Out', 'donors_callout_2_tab'),

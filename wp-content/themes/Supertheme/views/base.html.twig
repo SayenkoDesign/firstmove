@@ -25,13 +25,7 @@
     {% block stylesheets %}
         {{ function('wp_head') }}
         {% if sharethis %}
-            <script type="text/javascript">var switchTo5x=true;</script>
-        {% if is_ssl %}
-            <script type="text/javascript" id="st_insights_js" src="https://ws.sharethis.com/button/buttons.js"></script>
-        {% else %}
-            <script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js"></script>
-        {% endif %}
-            <script type="text/javascript">stLight.options({publisher: "{{ sharethis }}", doNotHash: true, doNotCopy: true, hashAddressBar: true});</script>
+            <script type="text/javascript" id="st_insights_js" src="//platform-api.sharethis.com/js/sharethis.js#property={{ sharethis }}&product=custom-share-buttons"></script>
         {% endif %}
     {% endblock %}
 </head>

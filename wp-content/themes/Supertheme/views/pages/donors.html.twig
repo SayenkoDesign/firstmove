@@ -22,7 +22,7 @@
         {% endfor %}
     </section>
     <section class="header">
-        <div class="box has-thumbnail" style="background-image:url('{{ post.get_field('donors_section_background_image') }}');">
+        <div class="box has-thumbnail" style="background-image:url('{{ TimberImage(post.get_field('donors_section_background_image')).src }}');">
             <div class="header-no-link">
                 <img src="{{ TimberImage(post.get_field('donors_section_image')).src }}" alt="{{ TimberImage(post.get_field('donors_section_image')).title }}">
             </div>

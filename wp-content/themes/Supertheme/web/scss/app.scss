@@ -62,6 +62,24 @@
   margin-left: -1rem;
   margin-right: -1rem;
 }
+.gform_wrapper .validation_error {
+  color: get-color(alert);
+  text-align: left;
+  margin-bottom: $global-margin;
+}
+.validation_message {
+  color: get-color(alert);
+  margin-top: $global-margin*-1;
+  margin-bottom: $global-margin;
+}
+.gfield_error {
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'],
+  [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'],
+  [type='time'], [type='url'], [type='color'], textarea {
+    color: get-color(alert);
+    border-color: get-color(alert);
+  }
+}
 
 // button
 .secondary.button {
@@ -91,14 +109,14 @@
 
 // slick
 .slider {
-  height: auto;
+  height: rem-calc(600px);
   margin: 0;
 }
 .slick-dotted.slick-slider {
   margin: 0;
 }
 .slick-slide {
-  height:auto;
+  height:100%;
   position: relative;
   background-size:cover;
   &::after {
@@ -112,15 +130,18 @@
     background-color: rgba(get-color(primary), 0.7);
   }
   .row {
-    max-width:rem-calc(650px);
     padding: $global-padding*5 $global-padding $global-margin*10 $global-padding;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     z-index: 2;
-    font-size: map-deep-get($header-styles, small, h5, font-size);
+    font-size: map-deep-get($header-styles, small, h6, font-size);
     @include breakpoint(small only) {
-      padding: $global-padding*5 $global-padding*4 $global-margin*8 $global-padding*4;
+      width: calc(100% - 80px);
     }
     @include breakpoint(medium) {
+      max-width:rem-calc(650px);
       font-size: map-deep-get($header-styles, medium, h5, font-size);
     }
     .headshot {
@@ -155,6 +176,10 @@
         position: relative;
         z-index: 2;
       }
+    }
+    a {
+      color: #EDAC4B;
+      font-family: $header-font-family;
     }
   }
 }
@@ -227,5 +252,37 @@
     font-size: rem-calc(80px);
     line-height: 1rem;
     margin: 36px 5px 20px 0;
+  }
+}
+
+// categories
+.categories {
+  margin-bottom: $global-margin;
+}
+
+// share this
+.share {
+  h4 {
+    color: $body-font-color;
+  }
+  .fa-stack {
+    width: rem-calc(48px);
+    height: rem-calc(48px);
+    line-height: rem-calc(48px);
+  }
+  .fa-stack-2x {
+    font-size: rem-calc(48px);
+  }
+  .st-custom-button {
+    display: inline-block;
+    .fa-circle {
+      color: get-color(primary);
+    }
+    &:hover {
+      cursor: pointer;
+      .fa-circle {
+        color: scale-color(get-color(primary), $lightness: -15%);
+      }
+    }
   }
 }

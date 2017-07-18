@@ -4,6 +4,7 @@
   li a {
     color: #454C54;
     padding: $global-padding;
+    font-weight: $global-weight-bold;
     &:hover {
       color: get-color(primary);
     }
@@ -14,6 +15,7 @@
     a {
       color: $white;
       padding: $global-padding/2 $global-padding*2;
+      font-weight: $global-weight-normal;
     }
   }
   .dropdown.menu > li.is-dropdown-submenu-parent {
@@ -25,7 +27,7 @@
       }
     }
     ul {
-      background-color: get-color(primary);
+      background-color: #92ADDE;
       border: none;
       box-shadow: 0 1px 4px 0 rgba(0,0,0,0.5);
       li {
