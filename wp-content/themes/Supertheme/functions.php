@@ -15,8 +15,11 @@ add_filter('timber/context', function($data) {
     $data['address'] = get_field('address', 'option');
     $data['subscribe'] = gravity_form(get_field('subscribe', 'option'), false,false,false,null,false,1,false);
     $data['contact'] = gravity_form(get_field('contact', 'option'), false,false,false,null,true,1,false);
+    $data['contact_heading'] = get_field('contact_heading', 'option');
+    $data['contact_content'] = get_field('contact_content', 'option');
     $data['twitter'] = get_field('twitter', 'option');
     $data['facebook'] = get_field('facebook', 'option');
+    $data['instagram'] = get_field('instagram', 'option');
 
     return $data;
 });

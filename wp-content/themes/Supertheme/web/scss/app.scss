@@ -206,7 +206,7 @@
   @include breakpoint(xlarge) {
     left: calc(50% - 600px + 30px - 15px);
   }
-  &:hover {
+  &:hover, &:focus {
     background-image: url("../images-min/prev.min.png");
   }
 }
@@ -220,7 +220,7 @@
   @include breakpoint(xlarge) {
     right: calc(50% - 600px + 30px - 15px);
   }
-  &:hover {
+  &:hover, &:focus {
     background-image: url("../images-min/next.min.png");
   }
 }
