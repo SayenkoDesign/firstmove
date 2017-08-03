@@ -72,6 +72,15 @@
     .ginput_container input {
       margin: 0 0 0.8rem 0;
     }
+    .gform_body {
+      width: 210px;
+    }
+    .gfield {
+      width: 100%;
+    }
+    .gf_browser_gecko .gform_button.button {
+      top: -27px;
+    }
   }
   .copyright {
     color: #EFF3F1;

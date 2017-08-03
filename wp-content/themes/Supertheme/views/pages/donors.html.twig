@@ -4,7 +4,7 @@
     <section class="downloads">
         <section class="callout-header text-center">
             <h4>{{ post.get_field('donors_callout_1_title') }}</h4>
-            <p>{{ post.get_field('donors_callout_1_content') }}</p>
+            <p>{{ post.get_field('donors_callout_1_content')|apply_filters('the_content') }}</p>
         </section>
         {% for row in rows %}
             <div class="row align-middle">
@@ -31,17 +31,14 @@
     <section class="platinum">
         <section class="callout text-center">
             <h4>{{ post.get_field('donors_callout_2_title') }}</h4>
-            <p>{{ post.get_field('donors_callout_2_content') }}</p>
-            {% if post.get_field('donors_callout_2_button_file') and post.get_field('donors_callout_2_button_text') %}
-                <a href="{{ post.get_field('donors_callout_2_button_file') }}" class="secondary button">{{ post.get_field('donors_callout_2_button_text') }}</a>
-            {% endif %}
+            <p>{{ post.get_field('donors_callout_2_content')|apply_filters('the_content') }}</p>
         </section>
         <div class="row align-center-middle icon-title">
             <div class="shrink column">
                 <img src="{{ TimberImage(post.get_field('donors_platinum_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_platinum_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Platinum Level</h5>
+                <h5>Giving Platinum Level</h5>
                 <h6>{{ post.get_field('donors_platinum_subtext') }}</h6>
             </div>
         </div>
@@ -62,7 +59,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_gold_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_gold_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Gold Level</h5>
+                <h5>Giving Gold Level</h5>
                 <h6>{{ post.get_field('donors_gold_subtext') }}</h6>
             </div>
         </div>
@@ -84,7 +81,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_silver_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_silver_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Silver Level</h5>
+                <h5>Giving Silver Level</h5>
                 <h6>{{ post.get_field('donors_silver_subtext') }}</h6>
             </div>
         </div>
@@ -104,7 +101,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_copper_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_copper_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Copper Level</h5>
+                <h5>Giving Copper Level</h5>
                 <h6>{{ post.get_field('donors_copper_subtext') }}</h6>
             </div>
         </div>
@@ -121,10 +118,7 @@
     <section class="supporters">
         <section class="callout text-center">
             <h4>{{ post.get_field('donors_callout_3_title') }}</h4>
-            <p>{{ post.get_field('donors_callout_3_content') }}</p>
-            {% if post.get_field('donors_callout_3_button_text') and post.get_field('donors_callout_3_button_url') %}
-                <a href="{{ post.get_field('donors_callout_3_button_url') }}" class="secondary button" target="_blank">{{ post.get_field('donors_callout_3_button_text') }}</a>
-            {% endif %}
+            <p>{{ post.get_field('donors_callout_3_content')|apply_filters('the_content') }}</p>
         </section>
         <div class="row">
             <div class="small-12 columns text-center">
@@ -142,7 +136,7 @@
     <section class="donate">
         <section class="callout text-center">
             <h4>{{ post.get_field('donors_callout_4_title') }}</h4>
-            <p>{{ post.get_field('donors_callout_4_content') }}</p>
+            <p>{{ post.get_field('donors_callout_4_content')|apply_filters('the_content') }}</p>
         </section>
         <div class="row">
             <div class="small-12 columns text-center">

@@ -34,6 +34,25 @@ add_action('wp_enqueue_scripts', function() {
 });
 
 add_shortcode('lead', function($atts, $content = null){
-
     return "<p class='lead'>$content</p>";
+});
+
+add_shortcode('button', function($atts, $content = null){
+    $atts = shortcode_atts([
+        'type' => '',
+        'color' => 'secondary',
+        'size' => '',
+        'url' => '',
+        'target' => '_self',
+    ], $atts);
+
+    if($atts['type'] == 'fancybox') {
+        return <<<HTML
+<a href="javascript:;" class="fancybox {$atts['size']} {$atts['color']} button" data-src="{$atts['url']}" target="{$atts['target']}">$content</a>
+HTML;
+    } elseif($atts['type'] == 'url') {
+        return <<<HTML
+<a href="{$atts['url']}" class="{$atts['size']} {$atts['color']} button" target="{$atts['target']}">$content</a>
+HTML;
+    }
 });

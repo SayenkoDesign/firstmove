@@ -4,7 +4,7 @@
     <section class="members" id="leadership">
         <section class="callout-header text-center">
             <h4>{{ post.about_callout_1_title }}</h4>
-            <p>{{ post.about_callout_1_content }}</p>
+            <p>{{ post.about_callout_1_content|apply_filters('the_content') }}</p>
         </section>
         <div class="row text-center">
             <div class="small-12 columns">
@@ -65,7 +65,7 @@
     <section class="list" id="values">
         <section class="callout text-center">
             <h4>{{ post.about_callout_2_title }}</h4>
-            <p>{{ post.about_callout_2_content }}</p>
+            <p>{{ post.about_callout_2_content|apply_filters('the_content') }}</p>
         </section>
         <div class="row align-center">
             <div class="shrink columns">

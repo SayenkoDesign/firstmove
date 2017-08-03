@@ -55,7 +55,7 @@ acf_add_local_field_group([
         ACFFieldGenerator::image('home_image', 'Footer Image', 'home_image', 'id',  '', true, 50),
         ACFFieldGenerator::repeater('home_steps', 'Steps', 'home_steps', [
             ACFFieldGenerator::text('home_step_title', 'Title', 'home_step_title', '', null, true, 50),
-            ACFFieldGenerator::url('home_step_url', 'URL', 'home_step_url', '', null, true, 50),
+            ACFFieldGenerator::url('home_step_url', 'URL', 'home_step_url', '', null, false, 50),
             ACFFieldGenerator::wysiwyg(
                 'home_step_content',
                 'Content',
@@ -225,17 +225,6 @@ acf_add_local_field_group([
                 ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
                 false
             ),
-            ACFFieldGenerator::text('curriculum_button_text', 'Button Text', 'curriculum_button_text', '', null, false, 50),
-            ACFFieldGenerator::file(
-                'curriculum_button_file',
-                'Button File',
-                'curriculum_button_file',
-                '',
-                ACFFieldGenerator::FILE_RETURN_URL,
-                null,
-                false,
-                50
-            ),
         ]),
         // slider
         ACFFieldGenerator::tab('curriculum_slider_tab', 'Fan Art', 'curriculum_slider_tab'),
@@ -353,17 +342,6 @@ acf_add_local_field_group([
             ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
             false
         ),
-        ACFFieldGenerator::text('donors_callout_2_button_text', 'Button Text', 'donors_callout_2_button_text', '', null, false, 50),
-        ACFFieldGenerator::file(
-            'donors_callout_2_button_file',
-            'Button File',
-            'donors_callout_2_button_file',
-            '',
-            ACFFieldGenerator::FILE_RETURN_URL,
-            null,
-            false,
-            50
-        ),
         // platinum
         ACFFieldGenerator::tab('donors_platinum_tab', 'Platinum', 'donors_platinum_tab'),
         ACFFieldGenerator::text('donors_platinum_subtext', 'Subtext', 'donors_platinum_subtext', '', null, true, 50),
@@ -409,8 +387,6 @@ acf_add_local_field_group([
             ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
             false
         ),
-        ACFFieldGenerator::text('donors_callout_3_button_text', 'Button Text', 'donors_callout_3_button_text', '', null, false, 50),
-        ACFFieldGenerator::url('donors_callout_3_button_url', 'Button URL', 'donors_callout_3_button_url', '', null, false, 50),
         // supporters
         ACFFieldGenerator::tab('donors_supporters_tab', 'Supporters', 'donors_supporters_tab'),
         ACFFieldGenerator::text('donors_supporters_title', 'Title', 'donors_supporters_title'),

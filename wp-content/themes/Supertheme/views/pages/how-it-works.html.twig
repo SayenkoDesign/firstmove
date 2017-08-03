@@ -19,7 +19,7 @@
                     <div class="card">
                         <h5>{{ step.home_step_title }}</h5>
                         {{ step.home_step_content }}
-                        <a href="{{ step.home_step_url }}">Read More</a>
+                        {% if step.home_step_url %}<a href="{{ step.home_step_url }}">Read More</a>{% endif %}
                     </div>
                 </div>
             </div>

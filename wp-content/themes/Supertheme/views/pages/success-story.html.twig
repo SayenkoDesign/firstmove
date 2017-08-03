@@ -4,7 +4,7 @@
     <section class="basic-content">
         <section class="callout-header text-center">
             <h4>{{ post.success_callout_title }}</h4>
-            <p>{{ post.success_callout_content }}</p>
+            <p>{{ post.success_callout_content|apply_filters('the_content') }}</p>
         </section>
         <div class="navigation">
             <div class="row">

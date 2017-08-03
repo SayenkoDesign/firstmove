@@ -14,9 +14,6 @@
                 <div class="small-12 medium-7 columns {% if loop.index % 2 == 0 %}medium-order-1{% endif %}">
                     <h4>{{ download.curriculum_alt_content_title }}</h4>
                     {{ download.curriculum_alt_content_content }}
-                    {% if download.curriculum_button_text and download.curriculum_button_file %}
-                        <a href="{{ download.curriculum_button_file }}" class="secondary button" target="_blank">{{ download.curriculum_button_text }}</a>
-                    {% endif %}
                 </div>
             </div>
         {% endfor %}
