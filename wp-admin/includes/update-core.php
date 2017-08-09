@@ -568,7 +568,7 @@ $_old_files = array(
 'wp-admin/images/arrows-dark-vs-2x.png',
 'wp-admin/images/wp-logo-vs.png',
 'wp-admin/images/arrows-dark-vs.png',
-'wp-admin/images/wp-login-logo.png',
+'wp-admin/images/wp-logo.png',
 'wp-admin/images/arrows-pr.png',
 'wp-admin/images/arrows-dark.png',
 'wp-admin/images/press-this.png',
