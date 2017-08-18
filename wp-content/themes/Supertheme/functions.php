@@ -56,3 +56,28 @@ HTML;
 HTML;
     }
 });
+
+add_action("after_switch_theme", function(){
+    if($admins = get_role( 'administrator')) {
+        $admins->add_cap('edit_videos');
+        $admins->add_cap('edit_videos');
+        $admins->add_cap('edit_other_videos');
+        $admins->add_cap('publish_videos');
+        $admins->add_cap('read_video');
+        $admins->add_cap('read_private_videos');
+        $admins->add_cap('delete_video');
+    }
+
+   if($educator = get_role('educator')) {
+       $educator->add_cap('read_video');
+   } else {
+        add_role(
+            'basic_contributor',
+            __( 'Basic Contributor' ),
+            [
+               'read'         => true,
+               'read_video'   => true,
+            ]
+        );
+   }
+});

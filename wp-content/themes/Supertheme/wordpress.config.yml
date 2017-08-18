@@ -20,6 +20,7 @@ parameters:
   wordpress.inline_scripts:
     - { id: "inline", source: "%template_dir%/web/scripts-min/inline.min.js" }
   wordpress.scripts:
+    - { id: "flowplayer", source: "%template_uri%/web/flowplayer/flowplayer-3.2.13.min.js", deps: ['jquery'], header: false }
     - { id: "app", source: "%template_uri%/web/scripts-min/app-debug.js", deps: ['jquery'], header: false }
   wordpress.post_types:
     success_stories:
@@ -29,3 +30,19 @@ parameters:
       menu_position: 6
       menu_icon: "dashicons-portfolio"
       supports: ["title", "editor", "thumbnail"]
+    videos:
+      public: true
+      show_in_rest: false
+      has_archive: true
+      labels: {name: "Videos", singular_name: "Video"}
+      menu_position: 6
+      menu_icon: "dashicons-video-alt3"
+      supports: ["title", "editor", "thumbnail"]
+      capabilities:
+        edit_post: "edit_videos"
+        edit_posts: "edit_videos"
+        edit_others_posts: "edit_other_videos"
+        publish_posts: "publish_videos"
+        read_post: "read_video"
+        read_private_posts: "read_private_videos"
+        delete_post: "delete_video"
