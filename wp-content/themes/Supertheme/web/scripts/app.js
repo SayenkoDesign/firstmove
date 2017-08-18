@@ -59,4 +59,10 @@ jQuery(function() {
             scrollTop: jQuery("#" + getParameterByName('scrollTo')).offset().top - 200
         }, 2000);
     }
+
+    // jQuery toggle transcript
+    jQuery('.transcript.button').on("click", function(){
+        console.log("toggle transcript");
+        jQuery(this).parent().next().stop(true, true).slideToggle();
+    });
 });

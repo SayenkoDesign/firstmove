@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="basic-content">
+        <div class="navigation">
+            <div class="row">
+                <div class="column text-left">
+                    {% if post.prev.link %}
+                        <a href="{{ post.prev.link }}"><i class="fa fa-angle-left"></i> Previous</a>
+                    {% endif %}
+                </div>
+                <div class="column text-right">
+                    {% if post.next.link %}
+                        <a href="{{ post.next.link }}">Next <i class="fa fa-angle-right"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="post">
+                    <div class="video-wrapper">
+                        <script async src="//flowplayer.com/7/flowplayer.js">{"src":"236411/{{ post.get_field("video_id") }}"}</script>
+                    </div>
+                    {% if post.get_field("video_content") %}
+                        <div class="content">
+                            {{ post.get_field("video_content") }}
+                        </div>
+                    {% endif %}
+                    {% if post.get_field("video_transcript") %}
+                        <div class="text-center">
+                            <a class="secondary button transcript">View Transcript</a>
+                        </div>
+                        <div id="transcript" class="transcript-content">
+                            {{ post.get_field("video_transcript") }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

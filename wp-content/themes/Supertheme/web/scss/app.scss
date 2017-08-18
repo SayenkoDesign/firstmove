@@ -19,9 +19,23 @@
 @import "partials/donors";
 @import "partials/about";
 @import "partials/success-stories";
+@import "partials/videos";
 
 *:focus {
   outline: none;
+}
+video, .video-wrapper {
+  width: 100%;
+  margin-bottom: $global-margin*2;
+}
+.transcript {
+}
+.transcript-content {
+  display: none;
+  background-color: $light-gray;
+  border: 1px solid $medium-gray;
+  padding: $global-padding*2;
+  font-family: $code-font-family;
 }
 
 // forms

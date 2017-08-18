@@ -491,3 +491,124 @@ acf_add_local_field_group([
     'active' => 1,
     'description' => '',
 ]);
+
+// videos post type
+acf_add_local_field_group([
+    'key' => 'group_videos',
+    'title' => 'Video Settings',
+    'fields' => [
+        ACFFieldGenerator::text('video', 'Video ID', 'video_id', '', null, true, 50),
+        ACFFieldGenerator::image('video_image', 'Image', 'video_image','id', '', true, 50),
+        ACFFieldGenerator::wysiwyg(
+            'video_transcript',
+            'Transcript',
+            'video_transcript',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_BASIC,
+            false,
+            '',
+            null,
+            false
+        ),
+        ACFFieldGenerator::wysiwyg(
+            'video_content',
+            'Additional Content',
+            'video_content',
+            ACFFieldGenerator::WYSIWYG_TAB_ALL,
+            ACFFieldGenerator::WYSIWYG_TOOLBAR_FULL,
+            true,
+            '',
+            null,
+            false
+        )
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'videos',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
+// videos playlist
+acf_add_options_page([
+    'page_title'  => "Video Playlist",
+    'menu_title'  => "Playlist",
+    "menu_slug"   => "video-playlist",
+    "capability"  => "publish_videos",
+    "parent_slug" => "edit.php?post_type=videos"
+]);
+acf_add_local_field_group([
+    'key' => 'group_video_playlist',
+    'title' => 'Video Playlist',
+    'fields' => [
+        ACFFieldGenerator::repeater('playlist', 'Playlist', 'playlist', [
+            ACFFieldGenerator::text('playlist_title', 'Playlist Title', 'playlist_title'),
+            ACFFieldGenerator::repeater('playlist_videos', 'Videos', 'playlist_videos', [
+                ACFFieldGenerator::post_object('playlist_video', 'Video', 'playlist_video','videos')
+            ])
+        ]),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'video-playlist',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
+
+// videos post page
+acf_add_options_page([
+    'page_title'  => "Video Settings",
+    'menu_title'  => "Settings",
+    "menu_slug"   => "video-settings",
+    "capability"  => "publish_videos",
+    "parent_slug" => "edit.php?post_type=videos"
+]);
+acf_add_local_field_group([
+    'key' => 'group_video_settings',
+    'title' => 'Video Settings',
+    'fields' => [
+        ACFFieldGenerator::text('slide_title', 'Title', 'slide_title'),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'video-settings',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
