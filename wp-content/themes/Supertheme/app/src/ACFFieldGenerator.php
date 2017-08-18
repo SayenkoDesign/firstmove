@@ -252,4 +252,43 @@ class ACFFieldGenerator
         ];
     }
 
+
+    public static function post_object(
+        string $key,
+        string $label,
+        string $name,
+        string $post_type,
+        string $taxonomy = '',
+        bool $allow_null = false,
+        bool $multiple = false,
+        string $return_format = 'object',
+        string $instructions = '',
+        string $default_value = null,
+        bool $required = true,
+        int $width = null,
+        string $class = '',
+        string $id = ''
+    ): array
+    {
+        return [
+            'key'   => $key,
+            'label' =>  $label,
+            'name'  => $name,
+            'post_type' => $post_type,
+            'type'  => "post_object",
+            'taxonomy' => $taxonomy,
+            'allow_null' => (int) $allow_null,
+            'multiple' => (int) $multiple,
+            'return_format' => $return_format,
+            'required' => (int) $required,
+            'conditional_logic' => 0,
+            'instructions' => $instructions,
+            'default_value' => $default_value,
+            'wrapper' => [
+                'width' => $width,
+                'class' => $class,
+                'id' => $id,
+            ],
+        ];
+    }
 }
