@@ -287,9 +287,9 @@ fields:
     toolbar: "basic"
     media_upload: false
   -
-    key:  "theme_options_tab_other"
+    key:  "theme_options_tab_contact"
     label:  "Contact Form"
-    name:  "tab_other"
+    name:  "tab_contact"
     type:  "tab"
     instructions:  ""
     required:  0,
@@ -345,3 +345,29 @@ fields:
     maxlength:  ""
     readonly:  0,
     disabled:  0
+  -
+    key:  "theme_options_tab_login"
+    label:  "Login"
+    name:  "tab_login"
+    type:  "tab"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "", class:  "", id:  "" }
+    placement: "left"
+    endpoint: 0
+  -
+    key:  "theme_options_login_redirect"
+    label:  "Login Redirect"
+    name:  "login_redirect"
+    type:  "page_link"
+    instructions:  "Redirect teachers to this page after login"
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "50", class:  "", id:  "" }
+    default_value:  ""
+    placeholder:  ""
+    prepend:  ""
+    append:  ""
+    allow_null: 1
+    post_type: "page"

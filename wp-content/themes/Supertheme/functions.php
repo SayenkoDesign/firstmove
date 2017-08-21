@@ -70,14 +70,39 @@ add_action("after_switch_theme", function(){
 
    if($educator = get_role('educator')) {
        $educator->add_cap('read_video');
+       $educator->add_cap('read_private_posts');
+       $educator->add_cap('read_private_pages');
    } else {
         add_role(
-            'basic_contributor',
-            __( 'Basic Contributor' ),
+            'educator',
+            __( 'Educator' ),
             [
-               'read'         => true,
-               'read_video'   => true,
+                'read'               => true,
+                'read_video'         => true,
+                'read_private_posts' => true,
+                'read_private_pages' => true,
             ]
         );
    }
 });
+
+add_action ('admin_init', function () {
+    global $wp_roles;
+    if($educator = get_role('educator')) {
+        $educator = get_role('educator');
+        $educator->add_cap('read_private_posts');
+    }
+});
+
+add_filter('login_redirect', function ($redirect_to, $request, $user) {
+    //is there a user to check?
+    if (isset($user->roles) && is_array($user->roles)) {
+        //check for admins
+        if ( in_array( 'educator', $user->roles ) ) {
+            // redirect them to the default place
+            return get_field('login_redirect', 'options');
+        }
+    }
+
+    return $redirect_to;
+}, 10, 3 );
