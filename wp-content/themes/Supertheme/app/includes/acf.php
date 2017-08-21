@@ -492,13 +492,40 @@ acf_add_local_field_group([
     'description' => '',
 ]);
 
+// cvideos template
+acf_add_local_field_group([
+    'key' => 'video_playlist',
+    'title' => 'Video playlist',
+    'fields' => [
+        ACFFieldGenerator::number('year', 'Year', 'year', '', null, true, 100),
+    ],
+    'location' => [
+        [
+            [
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'page-templates/videos.php',
+            ],
+        ],
+    ],
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => ['the_content'],
+    'active' => 1,
+    'description' => '',
+]);
+
 // videos post type
 acf_add_local_field_group([
     'key' => 'group_videos',
     'title' => 'Video Settings',
     'fields' => [
-        ACFFieldGenerator::text('video', 'Video ID', 'video_id', '', null, true, 50),
-        ACFFieldGenerator::image('video_image', 'Image', 'video_image','id', '', true, 50),
+        ACFFieldGenerator::number('video_year', 'Year', 'video_year', '', null, true, 33),
+        ACFFieldGenerator::number('video_lesson', 'Lesson #', 'video_lesson', '', null, true, 33),
+        ACFFieldGenerator::text('video', 'Video ID', 'video_id', '', null, true, 34),
         ACFFieldGenerator::wysiwyg(
             'video_transcript',
             'Transcript',
@@ -536,51 +563,12 @@ acf_add_local_field_group([
     'style' => 'default',
     'label_placement' => 'top',
     'instruction_placement' => 'label',
-    'hide_on_screen' => ['the_content'],
+    'hide_on_screen' => ['the_content',],
     'active' => 1,
     'description' => '',
 ]);
 
-// videos playlist
-acf_add_options_page([
-    'page_title'  => "Video Playlist",
-    'menu_title'  => "Playlist",
-    "menu_slug"   => "video-playlist",
-    "capability"  => "publish_videos",
-    "parent_slug" => "edit.php?post_type=videos"
-]);
-acf_add_local_field_group([
-    'key' => 'group_video_playlist',
-    'title' => 'Video Playlist',
-    'fields' => [
-        ACFFieldGenerator::repeater('playlist', 'Playlist', 'playlist', [
-            ACFFieldGenerator::text('playlist_title', 'Playlist Title', 'playlist_title'),
-            ACFFieldGenerator::repeater('playlist_videos', 'Videos', 'playlist_videos', [
-                ACFFieldGenerator::post_object('playlist_video', 'Video', 'playlist_video','videos')
-            ])
-        ]),
-    ],
-    'location' => [
-        [
-            [
-                'param' => 'options_page',
-                'operator' => '==',
-                'value' => 'video-playlist',
-            ],
-        ],
-    ],
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => ['the_content'],
-    'active' => 1,
-    'description' => '',
-]);
-
-
-// videos post page
+// videos settings page
 acf_add_options_page([
     'page_title'  => "Video Settings",
     'menu_title'  => "Settings",
@@ -592,7 +580,8 @@ acf_add_local_field_group([
     'key' => 'group_video_settings',
     'title' => 'Video Settings',
     'fields' => [
-        ACFFieldGenerator::text('slide_title', 'Title', 'slide_title'),
+        ACFFieldGenerator::text('videos_account_id', 'Account ID', 'videos_account_id'),
+        ACFFieldGenerator::text('videos_google_analytics', 'Google Analytics ID', 'videos_google_analytics'),
     ],
     'location' => [
         [
