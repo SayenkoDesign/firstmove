@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% set header_author = 0 %}
+{% set header_date = 0 %}
+{% block content %}
+    <div class="row">
+        {% for post in posts %}
+            <div class="small-12 medium-6 columns">
+                <div class="video-teaser">
+                    <a href="{{ post.link }}">
+                        <img src="{{ TimberImage(post.thumbnail).src|resize(800,500) }}" alt="{{ TimberImage(post.thumbnail).title }}">
+                        <h4>{{ post.title }}</h4>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div class="small-12 columns">
+                <h1>Nothing Found</h1>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

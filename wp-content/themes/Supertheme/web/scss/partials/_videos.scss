@@ -8,3 +8,30 @@
     }
   }
 }
+.video-teaser {
+  a {
+    position: relative;
+    margin-bottom: $global-margin;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: $global-margin*2;
+    &:hover {
+      opacity: 0.6;
+    }
+    img {
+      width: 100%;
+    }
+    h4 {
+      font-family: $body-font-family;
+      position: absolute;
+      left: $global-padding;
+      right: $global-padding;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}

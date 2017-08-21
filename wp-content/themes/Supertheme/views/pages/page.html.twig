@@ -3,15 +3,12 @@
 {% block body %}
     <section class="basic-content">
         <div class="row">
-            <div class="small-12 medium-8 large-9 columns">
+            <div class="small-12 columns">
                 <div class="post">
                     <div class="content">
-                        {{ post.post_content }}
+                        {{ post.post_content|apply_filters('the_content') }}
                     </div>
                 </div>
-            </div>
-            <div class="small-12 medium-4 large-3 columns">
-                {% include 'partials/sidebar.html.twig' %}
             </div>
         </div>
     </section>
