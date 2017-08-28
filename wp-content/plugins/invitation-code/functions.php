@@ -22,9 +22,9 @@ add_action('admin_enqueue_scripts', function ($hook) {
 add_action('acf/render_field', function($field) {
     if($field['key'] == "invitation_code") {
         ?>
-        <p><a id="code_generate" style="cursor: pointer">Generate Random Code</a></p>
+        <!--<p><a id="code_generate" style="cursor: pointer">Generate Random Code</a></p>-->
         <script>
-            Date.now = function() { return new Date().getTime(); }
+            Date.now = function() { return new Date().getTime(); };
             jQuery("#code_generate").on("click", function(){
                 sha256(Date.now()).then(function(digest) {
                     jQuery('#acf-invitation_code').val(digest.toUpperCase())
@@ -33,7 +33,7 @@ add_action('acf/render_field', function($field) {
         </script>
         <?php
     }
-}, 10, 1 );
+}, 10, 1);
 
 // register post type
 add_action( 'init', function () {
@@ -162,7 +162,7 @@ add_action('register_form', function() {
 ?>
     <label><?php _e( 'Invitation Code'); ?>
         <br />
-        <input name="invitation_code" tabindex="0" type="text" class="input" id="invitation_code" style="text-transform: uppercase" />
+        <input name="invitation_code" tabindex="0" type="text" class="input" id="invitation_code" />
     </label>
 <?php
 });
@@ -174,7 +174,7 @@ add_filter( 'registration_errors', function ($errors, $sanitized_user_login, $us
         $errors->add('invitation_error', __('<strong>ERROR</strong>: Invitation code is required.'));
         return $errors;
     } else {
-        $code = $_POST['invitation_code'];
+        $user_code = $_POST['invitation_code'];
         $posts  = new WP_Query([
             'numberposts'	=> -1,
             'post_type'		=> 'invitation_code',
@@ -182,7 +182,7 @@ add_filter( 'registration_errors', function ($errors, $sanitized_user_login, $us
                 'relation'		=> 'AND',
                 [
                     'key'	 	=> 'invitation_code',
-                    'value'	  	=> $code,
+                    'value'	  	=> $user_code,
                     'compare' 	=> '=',
                 ],
             ],
@@ -192,6 +192,10 @@ add_filter( 'registration_errors', function ($errors, $sanitized_user_login, $us
         }
         while ($posts->have_posts()) {
             $posts->the_post();
+            $code = get_field("invitation_code");
+            if($code != $user_code) {
+                $errors->add('invitation_error', __('<strong>ERROR</strong>: Invitation code is not invalid.'));
+            }
             $limit = get_field("invitation_limit");
             $usage = get_field("invitation_limit_used");
             $start = get_field("invitation_start", false, false);
@@ -212,7 +216,7 @@ add_filter( 'registration_errors', function ($errors, $sanitized_user_login, $us
 
             if($end) {
                 $end_date = DateTime::createFromFormat('Ymd', $end);
-                if($today->format('Ymd') > $end->format('Ymd')) {
+                if($today->format('Ymd') > $end_date->format('Ymd')) {
                     $errors->add('invitation_error', __('<strong>ERROR</strong>: Invitation code expired on '.$end_date->format('M jS Y')));
                 }
             }
