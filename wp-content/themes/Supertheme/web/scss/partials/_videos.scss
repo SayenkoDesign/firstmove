@@ -11,10 +11,18 @@
 .video-teaser {
   a {
     position: relative;
-    margin-bottom: $global-margin;
     width: 100%;
     display: inline-block;
     margin-bottom: $global-margin*2;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(get-color(primary), 0.6);
+    }
     &:hover {
       opacity: 0.6;
     }
@@ -22,7 +30,6 @@
       width: 100%;
     }
     h4 {
-      font-family: $body-font-family;
       position: absolute;
       left: $global-padding;
       right: $global-padding;
@@ -30,7 +37,6 @@
       transform: translateY(-50%);
       text-align: center;
       color: $white;
-      text-transform: uppercase;
       margin: 0;
     }
   }

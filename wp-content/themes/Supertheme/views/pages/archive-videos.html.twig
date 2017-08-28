@@ -3,8 +3,13 @@
 {% set header_date = 0 %}
 {% block content %}
     <div class="row">
+        <div class="small-12 columns text-center">
+            <a href="{{ activities }}" class="secondary button">Back to welcome</a>
+        </div>
+    </div>
+    <div class="row">
         {% for post in posts %}
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 large-4 columns">
                 <div class="video-teaser">
                     <a href="{{ post.link }}">
                         <img src="{{ TimberImage(post.thumbnail).src|resize(800,500) }}" alt="{{ TimberImage(post.thumbnail).title }}">

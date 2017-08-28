@@ -13,6 +13,9 @@ $current_year = get_field('year');
 $context['post'] = $timber::get_post();
 $context['posts'] = $timber::get_posts([
     'post_type' => 'videos',
+    'meta_key'			=> 'video_lesson',
+    'orderby'			=> 'meta_value_num',
+    'order'				=> 'ASC',
     'meta_query'	=> [
         'relation'		=> 'AND',
         [
@@ -23,5 +26,6 @@ $context['posts'] = $timber::get_posts([
     ],
 ]);
 $context['year'] = get_field('year');
+$context['activities'] = get_field('login_redirect', 'options');
 
 $timber::render('pages/archive-videos.html.twig', $context);
