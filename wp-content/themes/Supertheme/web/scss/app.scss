@@ -24,6 +24,16 @@
 *:focus {
   outline: none;
 }
+
+// login classes
+.logged-in .logout-only {
+  display: none;
+}
+body:not(.logged-in) .login-only {
+  display: none;
+}
+
+  // videos
 video, .video-wrapper {
   width: 100%;
   margin-bottom: $global-margin*2;
