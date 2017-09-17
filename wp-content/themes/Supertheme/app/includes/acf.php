@@ -344,8 +344,9 @@ acf_add_local_field_group([
         ),
         // platinum
         ACFFieldGenerator::tab('donors_platinum_tab', 'Platinum', 'donors_platinum_tab'),
-        ACFFieldGenerator::text('donors_platinum_subtext', 'Subtext', 'donors_platinum_subtext', '', null, true, 50),
-        ACFFieldGenerator::image('donors_platinum_icon', 'Icon', 'donors_platinum_icon', 'id', '', true, 50),
+        ACFFieldGenerator::text('donors_platinum_title', 'Title', 'donors_platinum_title', '', 'Giving Platinum Level', true, 33),
+        ACFFieldGenerator::text('donors_platinum_subtext', 'Subtext', 'donors_platinum_subtext', '', null, true, 33),
+        ACFFieldGenerator::image('donors_platinum_icon', 'Icon', 'donors_platinum_icon', 'id', '', true, 34),
         ACFFieldGenerator::repeater('donors_platinum_donors', 'Donors', 'donors_platinum_donors', [
             ACFFieldGenerator::image('donors_platinum_donor_image', 'Donor Logo', 'donors_platinum_donor_image', 'id', '', true, 33),
             ACFFieldGenerator::text('donors_platinum_donor_text', 'Text', 'donors_platinum_donor_text', '', null, false, 33),
@@ -353,8 +354,9 @@ acf_add_local_field_group([
         ]),
         // gold
         ACFFieldGenerator::tab('donors_gold_tab', 'Gold', 'donors_gold_tab'),
-        ACFFieldGenerator::text('donors_gold_subtext', 'Subtext', 'donors_gold_subtext', '', null, true, 50),
-        ACFFieldGenerator::image('donors_gold_icon', 'Icon', 'donors_gold_icon', 'id', '', true, 50),
+        ACFFieldGenerator::text('donors_gold_title', 'Title', 'donors_gold_title', '', 'Giving Gold Level', true, 33),
+        ACFFieldGenerator::text('donors_gold_subtext', 'Subtext', 'donors_gold_subtext', '', null, true, 33),
+        ACFFieldGenerator::image('donors_gold_icon', 'Icon', 'donors_gold_icon', 'id', '', true, 34),
         ACFFieldGenerator::repeater('donors_gold_donors', 'Donors', 'donors_gold_donors', [
             ACFFieldGenerator::image('donors_gold_donor_image', 'Donor Logo', 'donors_gold_donor_image', 'id', '', true, 33),
             ACFFieldGenerator::text('donors_gold_donor_text', 'Text', 'donors_gold_donor_text', '', null, false, 33),
@@ -362,16 +364,18 @@ acf_add_local_field_group([
         ]),
         // silver
         ACFFieldGenerator::tab('donors_silver_tab', 'Silver', 'donors_silver_tab'),
-        ACFFieldGenerator::text('donors_silver_subtext', 'Subtext', 'donors_silver_subtext', '', null, true, 50),
-        ACFFieldGenerator::image('donors_silver_icon', 'Icon', 'donors_silver_icon', 'id', '', true, 50),
+        ACFFieldGenerator::text('donors_silver_title', 'Title', 'donors_silver_title', '', 'Giving Silver Level', true, 33),
+        ACFFieldGenerator::text('donors_silver_subtext', 'Subtext', 'donors_silver_subtext', '', null, true, 33),
+        ACFFieldGenerator::image('donors_silver_icon', 'Icon', 'donors_silver_icon', 'id', '', true, 34),
         ACFFieldGenerator::repeater('donors_silver_donors', 'Donors', 'donors_silver_donors', [
             ACFFieldGenerator::text('donors_silver_donor_text', 'Text', 'donors_silver_donor_text', '', null, true, 50),
             ACFFieldGenerator::url('donors_silver_donor_url', 'URL', 'donors_silver_donor_url', '', null, false, 50),
         ]),
         //copper
         ACFFieldGenerator::tab('donors_copper_tab', 'Copper', 'donors_copper_tab'),
-        ACFFieldGenerator::text('donors_copper_subtext', 'Subtext', 'donors_copper_subtext', '', null, true, 50),
-        ACFFieldGenerator::image('donors_copper_icon', 'Icon', 'donors_copper_icon', 'id', '', true, 50),
+        ACFFieldGenerator::text('donors_copper_title', 'Title', 'donors_copper_title', '', 'Giving Copper Level', true, 33),
+        ACFFieldGenerator::text('donors_copper_subtext', 'Subtext', 'donors_copper_subtext', '', null, true, 33),
+        ACFFieldGenerator::image('donors_copper_icon', 'Icon', 'donors_copper_icon', 'id', '', true, 34),
         ACFFieldGenerator::repeater('donors_copper_donors', 'Donors', 'donors_copper_donors', [
             ACFFieldGenerator::text('donors_copper_donor_text', 'Text', 'donors_copper_donor_text', '', null, true, 50),
             ACFFieldGenerator::url('donors_silver_copper_url', 'URL', 'donors_copper_donor_url', '', null, false, 50),

@@ -9,7 +9,7 @@
         {% for download in downloads %}
             <div class="row align-middle">
                 <div class="small-12 medium-5 columns {% if loop.index % 2 == 0 %}medium-order-2{% endif %}">
-                    <img src="{{ TimberImage(download.curriculum_alt_content_image).src }}" alt="{{ TimberImage(download.curriculum_alt_content_image).title }}">
+                    <img src="{{ TimberImage(download.curriculum_alt_content_image).src|resize(368, 368) }}" alt="{{ TimberImage(download.curriculum_alt_content_image).title }}">
                 </div>
                 <div class="small-12 medium-7 columns {% if loop.index % 2 == 0 %}medium-order-1{% endif %}">
                     <h4>{{ download.curriculum_alt_content_title }}</h4>

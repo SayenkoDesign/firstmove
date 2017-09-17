@@ -9,7 +9,7 @@
         {% for row in rows %}
             <div class="row align-middle">
                 <div class="small-12 medium-5 columns {% if loop.index % 2 == 0 %}medium-order-2{% endif %}">
-                    <img src="{{ TimberImage(row.donors_alt_content_image).src }}" alt="{{ TimberImage(row.donors_alt_content_image).title }}">
+                    <img src="{{ TimberImage(row.donors_alt_content_image).src|resize(368, 368) }}" alt="{{ TimberImage(row.donors_alt_content_image).title }}">
                 </div>
                 <div class="small-12 medium-7 columns {% if loop.index % 2 == 0 %}medium-order-1{% endif %}">
                     <h4>{{ row.donors_alt_content_title }}</h4>
@@ -38,7 +38,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_platinum_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_platinum_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Giving Platinum Level</h5>
+                <h5>{{ post.get_field('donors_platinum_title') }}</h5>
                 <h6>{{ post.get_field('donors_platinum_subtext') }}</h6>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_gold_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_gold_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Giving Gold Level</h5>
+                <h5>{{ post.get_field('donors_gold_title') }}</h5>
                 <h6>{{ post.get_field('donors_gold_subtext') }}</h6>
             </div>
         </div>
@@ -81,7 +81,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_silver_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_silver_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Giving Silver Level</h5>
+                <h5>{{ post.get_field('donors_silver_title') }}</h5>
                 <h6>{{ post.get_field('donors_silver_subtext') }}</h6>
             </div>
         </div>
@@ -101,7 +101,7 @@
                 <img src="{{ TimberImage(post.get_field('donors_copper_icon')).src }}" alt="{{ TimberImage(post.get_field('donors_copper_icon')).title }}" class="donor-icon">
             </div>
             <div class="shrink column">
-                <h5>Giving Copper Level</h5>
+                <h5>{{ post.get_field('donors_copper_title') }}</h5>
                 <h6>{{ post.get_field('donors_copper_subtext') }}</h6>
             </div>
         </div>
