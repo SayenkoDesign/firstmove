@@ -12,12 +12,13 @@ $context = $timber::get_context();
 $current_year = get_field('year');
 $context['post'] = $timber::get_post();
 $context['posts'] = $timber::get_posts([
-    'post_type' => 'videos',
+    'post_type'         => 'videos',
+    'posts_per_page'    => 100,
     'meta_key'			=> 'video_lesson',
     'orderby'			=> 'meta_value_num',
     'order'				=> 'ASC',
-    'meta_query'	=> [
-        'relation'		=> 'AND',
+    'meta_query'	    => [
+        'relation' => 'AND',
         [
             'key' => 'video_year',
             'value' => $current_year,
