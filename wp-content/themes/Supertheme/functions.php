@@ -206,6 +206,7 @@ add_action('register_form', function() {
             <option value="Brawner Intermediate School">Brawner Intermediate School</option>
             <option value="Bretano Elementary (Chicago Public Schools)">Bretano Elementary (Chicago Public Schools)</option>
             <option value="Bret Harte School">Bret Harte School</option>
+            <option value="Brevard Elementary School (Transylvania County Schools)">Brevard Elementary School (Transylvania County Schools)</option>
             <option value="Briarcrest Elementary School">Briarcrest Elementary School</option>
             <option value="Brunner Elementary School">Brunner Elementary School</option>
             <option value="Burnett Elementary">Burnett Elementary</option>
@@ -233,6 +234,7 @@ add_action('register_form', function() {
             <option value="Dearborn Park Elementary">Dearborn Park Elementary</option>
             <option value="Deneen School of Excellence">Deneen School of Excellence</option>
             <option value="Dewey School of Excellence">Dewey School of Excellence</option>
+            <option value="Dickinson Elementary (Lake Washington School District)">Dickinson Elementary (Lake Washington School District)</option>
             <option value="Dodge Renaissance Academy">Dodge Renaissance Academy</option>
             <option value="Doolittle Elementary (Chicago Public Schools)">Doolittle Elementary (Chicago Public Schools)</option>
             <option value="Donnelly Elementary">Donnelly Elementary</option>
