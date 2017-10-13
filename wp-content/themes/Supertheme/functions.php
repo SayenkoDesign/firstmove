@@ -194,6 +194,7 @@ add_action('register_form', function() {
             <option value="Bailey Elementary">Bailey Elementary</option>
             <option value="Barry Elementary">Barry Elementary</option>
             <option value="Bass Elementary">Bass Elementary</option>
+            <option value="Battle Creek Elementary (St. Paul Public Schools)">Battle Creek Elementary (St. Paul Public Schools)</option>
             <option value="Beach Elementary">Beach Elementary</option>
             <option value="Beasley Academic Center">Beasley Academic Center</option>
             <option value="Beethoven Elementary">Beethoven Elementary</option>
