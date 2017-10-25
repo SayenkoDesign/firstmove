@@ -231,6 +231,7 @@ add_action('register_form', function() {
             <option value="Council Elementary">Council Elementary</option>
             <option value="Crescent Heights Elementary">Crescent Heights Elementary</option>
             <option value="Curtis School of Excellence">Curtis School of Excellence</option>
+            <option value="Daniel Webster Elementary (Chicago Public Schools) ">Daniel Webster Elementary (Chicago Public Schools) </option>
             <option value="Dawes Elementary (Chicago Public Schools)">Dawes Elementary (Chicago Public Schools)</option>
             <option value="Dearborn Park Elementary">Dearborn Park Elementary</option>
             <option value="Deneen School of Excellence">Deneen School of Excellence</option>
@@ -257,6 +258,7 @@ add_action('register_form', function() {
             <option value="Evergreen School">Evergreen School</option>
             <option value="Fairmount Park Elementary">Fairmount Park Elementary</option>
             <option value="Farnsworth Aerospace Lower">Farnsworth Aerospace Lower</option>
+            <option value="Field Elementary School (Dallas ISD)">Field Elementary School (Dallas ISD)</option>
             <option value="Forest North Elementary">Forest North Elementary</option>
             <option value="Franklin Elementary (Spokane Public Schools)">Franklin Elementary (Spokane Public Schools)</option>
             <option value="Franklin Elementary (Tacoma Public Schools)">Franklin Elementary (Tacoma Public Schools)</option>
@@ -278,6 +280,7 @@ add_action('register_form', function() {
             <option value="Henderson Elementary">Henderson Elementary</option>
             <option value="Henry Clay Elementary School">Henry Clay Elementary School</option>
             <option value="Herfurth Elementary">Herfurth Elementary</option>
+            <option value="Herfurth Elementary (Garland ISD)">Herfurth Elementary (Garland ISD)</option>
             <option value="Hillside Academy">Hillside Academy</option>
             <option value="Holmes Elementary">Holmes Elementary</option>
             <option value="Houston Elementary">Houston Elementary</option>
@@ -299,6 +302,7 @@ add_action('register_form', function() {
             <option value="John Muir Elementary">John Muir Elementary</option>
             <option value="John Pershing Magnet">John Pershing Magnet</option>
             <option value="Jones Elementary">Jones Elementary</option>
+            <option value="Jones Elementary (Bryan ISD) ">Jones Elementary (Bryan ISD) </option>
             <option value="Kalapya Elementary">Kalapya Elementary</option>
             <option value="Keller Regional Gifted Center">Keller Regional Gifted Center</option>
             <option value="Kellman Elementary (Chicago Public Schools)">Kellman Elementary (Chicago Public Schools)</option>
@@ -317,6 +321,7 @@ add_action('register_form', function() {
             <option value="Lincoln Elementary School">Lincoln Elementary School</option>
             <option value="Linwood Elementary">Linwood Elementary</option>
             <option value="Lister Elementary">Lister Elementary</option>
+            <option value="Lister Elementary (Garland ISD) ">Lister Elementary (Garland ISD)</option>
             <option value="Logan Elementary">Logan Elementary</option>
             <option value="Lone Pine Elementary">Lone Pine Elementary</option>
             <option value="Lone Star Elementary">Lone Star Elementary</option>
@@ -351,7 +356,9 @@ add_action('register_form', function() {
             <option value="National Teachers Academy">National Teachers Academy</option>
             <option value="Nettie Baccus Elementary">Nettie Baccus Elementary</option>
             <option value="Northlake Elementary">Northlake Elementary</option>
+            <option value="Northlake Elementary (Garland ISD) ">Northlake Elementary (Garland ISD)</option>
             <option value="Oak Woods School">Oak Woods School</option>
+            <option value="Ogden International School (Chicago Public Schools)">Ogden International School (Chicago Public Schools)</option>
             <option value="Otis Elementary (Chicago Public Schools)">Otis Elementary (Chicago Public Schools)</option>
             <option value="Odyssey Elementary School">Odyssey Elementary School</option>
             <option value="Park Glen Elementary">Park Glen Elementary</option>
@@ -383,6 +390,7 @@ add_action('register_form', function() {
             <option value="Sherman Elementary School (Chicago Public Schools)">Sherman Elementary School (Chicago Public Schools)</option>
             <option value="Sherwood Elementary">Sherwood Elementary</option>
             <option value="Shoop Academy">Shoop Academy</option>
+            <option value="Skyline Elementary (Tacoma Public Schools)">Skyline Elementary (Tacoma Public Schools)</option>
             <option value="South Belt Elementary">South Belt Elementary</option>
             <option value="Southeast Area Elementary">Southeast Area Elementary</option>
             <option value="Southside Elementary">Southside Elementary</option>
@@ -402,9 +410,12 @@ add_action('register_form', function() {
             <option value="Thomas Edison Charter School">Thomas Edison Charter School</option>
             <option value="Till Elementary (Chicago Public Schools)">Till Elementary (Chicago Public Schools)</option>
             <option value="Tilton Elementary (Chicago Public Schools)">Tilton Elementary (Chicago Public Schools)</option>
+            <option value="Truett Elementary (Dallas ISD) ">Truett Elementary (Dallas ISD)</option>
             <option value="Turner Elem">Turner Elem</option>
+            <option value="Vanderpoel Elementary Magnet (Chicago Public Schools)">Vanderpoel Elementary Magnet (Chicago Public Schools)</option>
             <option value="Vernon School">Vernon School</option>
             <option value="Walnut Glen Academy">Walnut Glen Academy</option>
+            <option value="Walnut Glen Academy (Garland ISD)">Walnut Glen Academy (Garland ISD)</option>
             <option value="Ward Elementary (Chicago Public Schools)">Ward Elementary (Chicago Public Schools)</option>
             <option value="Washington Elementary">Washington Elementary</option>
             <option value="Waters Elementary">Waters Elementary</option>
