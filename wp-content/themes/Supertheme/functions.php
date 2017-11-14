@@ -213,6 +213,7 @@ add_action('register_form', function() {
             <option value="Burnett Elementary">Burnett Elementary</option>
             <option value="Burnham Math & Science Academy">Burnham Math & Science Academy</option>
             <option value="Carnegie Elementary">Carnegie Elementary</option>
+            <option value="Carrie Jacobs Bond Elementary (Chicago Public Schools)">Carrie Jacobs Bond Elementary (Chicago Public Schools)</option>
             <option value="Carroll Elementary">Carroll Elementary</option>
             <option value="Carver Elementary (Chicago Public Schools)">Carver Elementary (Chicago Public Schools)</option>
             <option value="Carver Elementary (Garland ISD)">Carver Elementary (Garland ISD)</option>
@@ -272,6 +273,7 @@ add_action('register_form', function() {
             <option value="George F. Cassell Elementary School">George F. Cassell Elementary School</option>
             <option value="Golden Acres">Golden Acres</option>
             <option value="Gordon Elementary">Gordon Elementary</option>
+            <option value="Grass Lake School (Kent School District)">Grass Lake School (Kent School District)</option>
             <option value="Gregory Elementary">Gregory Elementary</option>
             <option value="Grimes Fleming Elementary">Grimes Fleming Elementary</option>
             <option value="Hancock Elementary">Hancock Elementary</option>
@@ -283,6 +285,7 @@ add_action('register_form', function() {
             <option value="Herfurth Elementary (Garland ISD)">Herfurth Elementary (Garland ISD)</option>
             <option value="Hillside Academy">Hillside Academy</option>
             <option value="Holmes Elementary">Holmes Elementary</option>
+            <<option value="Hope Community Academy (Individual School)">Hope Community Academy (Individual School)</option>
             <option value="Houston Elementary">Houston Elementary</option>
             <option value="Howe School of Excellence">Howe School of Excellence</option>
             <option value="Hughes C Elementary">Hughes C Elementary</option>
