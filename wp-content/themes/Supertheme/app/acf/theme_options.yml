@@ -11,6 +11,29 @@ instruction_placement: label
 hide_on_screen: ""
 fields:
   -
+    key:  "theme_options_header_alert"
+    label:  "Header Alert"
+    name:  "header_alert"
+    type:  "tab"
+    instructions:  ""
+    required:  0,
+    conditional_logic:  0,
+    wrapper:  { width:  "", class:  "", id:  "" }
+    placement: "left"
+    endpoint: 0
+  -
+    key:  "theme_options_alert_message"
+    label:  "Alert Message"
+    name:  "alert_message"
+    type:  "wysiwyg"
+    instructions:  ""
+    required:  0
+    conditional_logic:  0
+    wrapper:  { width:  "", class:  "", id:  "" }
+    tabs: "all"
+    toolbar: "basic"
+    media_upload: false
+  -
     key:  "theme_options_tab_ids"
     label:  "IDs"
     name:  "google_tab_id"

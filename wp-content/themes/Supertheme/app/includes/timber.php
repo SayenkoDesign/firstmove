@@ -19,6 +19,9 @@ add_filter('timber_context', function($data) {
     // checkers
     $data['is_ssl'] = is_ssl();
 
+    // header alert message
+    $data['alert_message'] = get_field('alert_message', 'option');
+
     // copyright
     $data['copyright'] = get_field('copyright', 'option');
 

@@ -32,6 +32,16 @@
 <body class="{{ body_class }}">
 
 {% block navi %}
+
+
+	{% if facebook %}
+	<div id="header_alert">
+		<div class="row align-center text-center">
+        {{ alert_message }}
+		</div>
+	</div>
+	{% endif %}
+
     <div data-sticky-container>
         <div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="sticky-start:top" data-margin-top="0" style="width:100%">
             <div class="large-menu show-for-large">
